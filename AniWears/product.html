@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AniWears - Products</title>
+  <style>
+    /* Global Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Arial', sans-serif;
+    }
+
+    /* Body */
+    body {
+      background-color: #f9f9f9;
+      color: #333;
+      line-height: 1.6;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    /* Header */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 30px;
+      background-color: #1a1a1d;
+      color: #fff;
+    }
+
+    header .logo img {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    header nav a {
+      color: #ddd;
+      margin: 0 20px;
+      text-decoration: none;
+      font-size: 16px;
+      transition: color 0.3s;
+    }
+
+    header nav a:hover {
+      color: #f90;
+    }
+
+    /* Products Section */
+    .products-container {
+      padding: 60px 20px;
+      text-align: center;
+      flex-grow: 1;
+    }
+
+    .products-container h1 {
+      font-size: 36px;
+      margin-bottom: 30px;
+      color: #333;
+    }
+
+    .product-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-evenly;
+      gap: 20px;
+    }
+
+    .product-card {
+      width: 30%; /* This ensures 3 products per row */
+      background-color: #fff;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .product-card img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+    }
+
+    .product-card .info {
+      padding: 20px;
+      text-align: center;
+    }
+
+    .product-card .info h3 {
+      font-size: 20px;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+
+    .product-card .info p {
+      font-size: 18px;
+      color: #f60;
+    }
+
+    .button-container {
+      display: flex;
+      justify-content: space-around;
+      margin-top: 15px;
+    }
+
+    .button-container a {
+      display: inline-block;
+      padding: 10px 15px;
+      text-decoration: none;
+      color: #fff;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+    }
+
+    .button-container .cart-button {
+      background-color: #f90;
+    }
+
+    .button-container .cart-button:hover {
+      background-color: #ffb84d;
+    }
+
+    .button-container .buy-button {
+      background-color: #333;
+    }
+
+    .button-container .buy-button:hover {
+      background-color: #555;
+    }
+
+    /* Cart Count Styling */
+    .cart-count {
+      position: absolute;
+      top: 10px;
+      right: 20px;
+      background-color: #f60;
+      color: #fff;
+      border-radius: 50%;
+      padding: 5px 10px;
+      font-size: 16px;
+      font-weight: bold;
+    }
+
+    /* Footer */
+    footer {
+      padding: 30px 20px;
+      background-color: #1a1a1d;
+      color: #fff;
+      text-align: center;
+      font-size: 14px;
+      margin-top: 40px;
+      margin-bottom: 0;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="logo">
+      <img src="l.jpg" alt="AniWears Logo">
+    </div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="product.html">Shop</a>
+      <a href="about.html">About Us</a>
+      <a href="contact.html">Contact</a>
+      <a href="cart.html">
+        <span class="cart-icon">🛒</span>
+        <span class="cart-count" id="cart-count">0</span>
+      </a>
+    </nav>
+  </header>
+
+  <!-- Products Section -->
+  <section class="products-container">
+    <h1>Our Products</h1>
+    <div class="product-grid">
+      <!-- Product Card 1 -->
+      <div class="product-card">
+        <img src="images/p1.jpg" alt="Anime Hoodie">
+        <div class="info">
+          <h3>Anime Hoodie</h3>
+          <p>₹3,999</p>
+          <div class="button-container">
+            <a href="#" class="cart-button" onclick="addToCart('Anime Hoodie', 3999)">Add to Cart</a>
+            <a href="checkout.html" class="buy-button">Buy Now</a>
+          </div>
+        </div>
+      </div>
+      <!-- Product Card 2 -->
+      <div class="product-card">
+        <img src="images/p2.jpg" alt="Anime T-Shirt">
+        <div class="info">
+          <h3>Gara Hoodie</h3>
+          <p>₹1,999</p>
+          <div class="button-container">
+            <a href="#" class="cart-button" onclick="addToCart('Anime T-Shirt', 1999)">Add to Cart</a>
+            <a href="checkout.html" class="buy-button">Buy Now</a>
+          </div>
+        </div>
+      </div>
+      <!-- Product Card 3 -->
+      <div class="product-card">
+        <img src="images/p3.jpg" alt="Anime T-shirt">
+        <div class="info">
+          <h3>Anime T-shirt</h3>
+          <p>₹4,499</p>
+          <div class="button-container">
+            <a href="#" class="cart-button" onclick="addToCart('Manga Jacket', 4499)">Add to Cart</a>
+            <a href="checkout.html" class="buy-button">Buy Now</a>
+          </div>
+        </div>
+      </div>
+      <!-- Product Card 4 -->
+      <div class="product-card">
+        <img src="images/p4.jpg" alt="Anime T-shirt">
+        <div class="info">
+          <h3>Anime T-shirt</h3>
+          <p>₹699</p>
+          <div class="button-container">
+            <a href="#" class="cart-button" onclick="addToCart('Kawaii Socks', 699)">Add to Cart</a>
+            <a href="checkout.html" class="buy-button">Buy Now</a>
+          </div>
+        </div>
+      </div>
+      <!-- Product Card 5 -->
+      <div class="product-card">
+        <img src="images/p5.jpg" alt="Anime Sweat Shirt">
+        <div class="info">
+          <h3>Anime Sweat Shirt</h3>
+          <p>₹1,199</p>
+          <div class="button-container">
+            <a href="#" class="cart-button" onclick="addToCart('Chibi Pillow', 1199)">Add to Cart</a>
+            <a href="checkout.html" class="buy-button">Buy Now</a>
+          </div>
+        </div>
+      </div>
+      <!-- Product Card 6 -->
+      <div class="product-card">
+        <img src="images/p6.jpg" alt="Naruto Mug">
+        <div class="info">
+          <h3>Hoddie</h3>
+          <p>₹799</p>
+          <div class="button-container">
+            <a href="#" class="cart-button" onclick="addToCart('Naruto Mug', 799)">Add to Cart</a>
+            <a href="checkout.html" class="buy-button">Buy Now</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product Card 7 -->
+      <div class="product-card">
+        <img src="images/p7.jpg" alt="Dragon Ball Keychain">
+        <div class="info">
+          <h3>Sweat Shirt</h3>
+          <p>₹499</p>
+          <div class="button-container">
+            <a href="#" class="cart-button" onclick="addToCart('Dragon Ball Keychain', 499)">Add to Cart</a>
+            <a href="checkout.html" class="buy-button">Buy Now</a>
+          </div>
+        </div>
+      </div>
+      <!-- Product Card 8 -->
+      <div class="product-card">
+        <img src="images/p8.jpg" alt="Attack on Titan Backpack">
+        <div class="info">
+          <h3>Sweat shirt</h3>
+          <p>₹2,499</p>
+          <div class="button-container">
+            <a href="#" class="cart-button" onclick="addToCart('Attack on Titan Backpack', 2499)">Add to Cart</a>
+            <a href="checkout.html" class="buy-button">Buy Now</a>
+          </div>
+        </div>
+      </div>
+      <!-- Product Card 9 -->
+      <div class="product-card">
+        <img src="images/p9.jpg" alt="One Piece Wallet">
+        <div class="info">
+          <h3>Hoodie</h3>
+          <p>₹1,299</p>
+          <div class="button-container">
+            <a href="#" class="cart-button" onclick="addToCart('One Piece Wallet', 1299)">Add to Cart</a>
+            <a href="checkout.html" class="buy-button">Buy Now</a>
+          </div>
+        </div>
+      </div>
+      <!-- Product Card 10 -->
+      <div class="product-card">
+        <img src="images/p10.jpg" alt="My Hero Academia Phone Case">
+        <div class="info">
+          <h3>Hoodie</h3>
+          <p>₹799</p>
+          <div class="button-container">
+            <a href="#" class="cart-button" onclick="addToCart('My Hero Academia Phone Case', 799)">Add to Cart</a>
+            <a href="checkout.html" class="buy-button">Buy Now</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product Card 11 -->
+      <div class="product-card">
+        <img src="images/p11.jpg" alt="Sailor Moon Necklace">
+        <div class="info">
+          <h3>Hoodie</h3>
+          <p>₹1,599</p>
+          <div class="button-container">
+            <a href="#" class="cart-button" onclick="addToCart('Sailor Moon Necklace', 1599)">Add to Cart</a>
+            <a href="checkout.html" class="buy-button">Buy Now</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product Card 12 -->
+      <div class="product-card">
+        <img src="images/p12.jpg" alt="Studio Ghibli Poster">
+        <div class="info">
+          <h3>Hoodie</h3>
+          <p>₹999</p>
+          <div class="button-container">
+            <a href="#" class="cart-button" onclick="addToCart('Studio Ghibli Poster', 999)">Add to Cart</a>
+            <a href="checkout.html" class="buy-button">Buy Now</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2024 AniWears. All Rights Reserved.</p>
+  </footer>
+
+  <script>
+    // JavaScript to handle adding products to the cart
+    let cartCount = localStorage.getItem('cartCount') ? parseInt(localStorage.getItem('cartCount')) : 0;
+
+    // Update cart count
+    document.getElementById('cart-count').textContent = cartCount;
+
+    // Function to add to cart
+    function addToCart(product, price) {
+      cartCount++;
+      localStorage.setItem('cartCount', cartCount);
+      document.getElementById('cart-count').textContent = cartCount;
+
+      // Optionally, add the product to the cart list in localStorage (for cart page)
+      let cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+      cartItems.push({ product, price });
+      localStorage.setItem('cartItems', JSON.stringify(cartItems));
+
+      alert(product + " has been added to your cart for ₹" + price);
+    }
+  </script>
+</body>
+</html>

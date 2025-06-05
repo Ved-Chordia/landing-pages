@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bill - Coffee Heaven</title>
+    <style>
+        /* Consistent styles for the bill page */
+        html, body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #faf3e0; /* Consistent background color */
+            color: #4b3832;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            background-color: #6f4e37;
+            display: flex;
+            justify-content: center; /* Centers content horizontally in the header */
+            align-items: center; /* Centers content vertically in the header */
+            padding: 10px 50px;
+        }
+
+        header h1 {
+            font-size: 36px;
+            font-weight: bold;
+            color: #fff;
+            margin: 0;
+        }
+
+
+
+        main {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .product-card {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            width: 300px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        .product-card img {
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .product-card h2 {
+            font-size: 20px;
+            margin: 10px 0;
+            color: #4b3832;
+        }
+
+        .product-card p {
+            font-size: 14px;
+            color: #6f4e37;
+            margin: 5px 0;
+        }
+
+        .product-card .product-price {
+            font-weight: bold;
+            font-size: 18px;
+            color: #4b3832;
+            margin-top: 10px;
+        }
+
+        button {
+            background-color: #d2b48c;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 18px;
+            text-align: center;
+        }
+
+        button:hover {
+            background-color: #6f4e37;
+        }
+
+        footer {
+            background-color: #d2b48c;
+            text-align: center;
+            padding: 20px 0;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Bill - Coffee Heaven</h1>
+</header>
+
+<main>
+    <!-- Product card container -->
+    <div class="product-card" id="product-card">
+        <!-- Product details will be dynamically added here -->
+    </div>
+    <!-- Centered Buy Now button -->
+    <button onclick="confirmOrder()">Buy Now</button>
+</main>
+
+<footer>
+    <p>&copy; 2024 Coffee Heaven | Made with ☕ and ❤️</p>
+</footer>
+
+<script>
+    // Fetch the selected product details from localStorage
+    const product = JSON.parse(localStorage.getItem('selectedProduct'));
+
+    if (product) {
+        const productCard = document.getElementById('product-card');
+        productCard.innerHTML = ""; // Clear any existing content
+
+        // Add product image
+        const img = document.createElement('img');
+        img.src = product.image;
+        img.alt = product.name;
+
+        // Add product name
+        const name = document.createElement('h2');
+        name.textContent = product.name;
+
+        // Add product description
+        const description = document.createElement('p');
+        description.textContent = product.description;
+
+        // Add product price
+        const price = document.createElement('div');
+        price.classList.add('product-price');
+        price.textContent = `₹${product.price}`;
+
+        // Append all elements to the product card
+        productCard.appendChild(img);
+        productCard.appendChild(name);
+        productCard.appendChild(description);
+        productCard.appendChild(price);
+    } else {
+        // Fallback message if no product is selected
+        const productCard = document.getElementById('product-card');
+        productCard.innerHTML = "<p>No product selected. Please go back and choose a product.</p>";
+    }
+
+    // Function to handle the confirmation of the order
+    function confirmOrder() {
+        alert("Order confirmed! Thank you for shopping with Coffee Heaven.");
+        localStorage.removeItem('selectedProduct'); // Clear product details
+        window.location.href = "menu.html"; // Redirect to menu page
+    }
+</script>
+
+</body>
+</html>

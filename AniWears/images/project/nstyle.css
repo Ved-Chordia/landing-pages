@@ -1,0 +1,106 @@
+/* Resetting some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body and basic styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f8f8;
+}
+
+/* Navbar */
+header {
+    background-color: #111;
+    color: #fff;
+    padding: 20px;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    text-transform: uppercase;
+}
+
+.nav-links li a:hover {
+    color: #FF5733;
+}
+
+/* Hero Section */
+.hero {
+    background-color: #111;
+    background-image: url(https://images.squarespace-cdn.com/content/v1/530e580fe4b0233f8076a006/1467833798897-TDJUCQBWAXVMXI9O7MT8/Cristiano_Ronaldo_The_Switch_Zilka_Blahutka_Nike);
+    color: coral;
+    padding: 100px 20px;
+    text-align: center;
+}
+
+.hero h2 {
+    font-size: 50px;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 20px;
+    margin-bottom: 40px;
+}
+
+.cta-btn {
+    padding: 15px 30px;
+    font-size: 18px;
+    color: #fff;
+    background-color: #FF5733;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.cta-btn:hover {
+    background-color: #FF4300;
+}
+
+/* Spinning Football Icon */
+.football-section {
+    text-align: center;
+    margin: 20px 0;
+}
+
+#football-icon {
+    width: 100px;
+    cursor: pointer;
+    animation: spin 5s linear infinite;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Footer */
+footer {
+    background-color: #111;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    font-size: 14px;
+}

@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FitPro Gym - Home</title>
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+    
+        body {
+            font-family: Arial, sans-serif;
+            background: #121212;
+            color: #fff;
+            line-height: 1.6;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+    
+        /* Header */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 40px;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            background: transparent;
+            transition: background 0.3s ease;
+        }
+    
+        header.scrolled {
+            background: rgba(0, 0, 0, 0.9);
+        }
+    
+        header h1 {
+            font-size: 2rem;
+        }
+    
+        nav ul {
+            list-style: none;
+            display: flex;
+        }
+    
+        nav ul li {
+            margin: 0 15px;
+        }
+    
+        nav ul li a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: bold;
+            font-size: 1rem;
+            transition: color 0.3s ease;
+        }
+    
+        nav ul li a:hover {
+            color: #f44336;
+        }
+    
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            height: 100vh;
+            background: url('p1.jpg') no-repeat center center/cover;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            color: #fff;
+            position: relative;
+        }
+    
+        .hero::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 1;
+        }
+    
+        .hero h2,
+        .hero p,
+        .hero a {
+            position: relative;
+            z-index: 2;
+        }
+    
+        .hero h2 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+    
+        .hero p {
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+        }
+    
+        .hero a {
+            display: inline-block;
+            padding: 12px 25px;
+            background: #f44336;
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            transition: background 0.3s ease;
+        }
+    
+        .hero a:hover {
+            background: #ff7961;
+        }
+    
+        /* Image Sections */
+        .section {
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start; /* Align content towards the left */
+        color: #fff;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        padding: 40px;
+        position: relative;
+        margin-bottom: 10px; /* Gap between images */
+    }
+
+    .section::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.3); /* Semi-transparent overlay */
+        z-index: 1;
+    }
+
+    .section-content {
+        position: relative;
+        z-index: 2; /* Above overlay */
+        max-width: 500px;
+        text-align: left; /* Align text to the left */
+        margin-left: 40px; /* Add space from the edge */
+    }
+
+    .section h3 {
+    font-size: 36px;
+    margin: 10px 0;
+}
+
+.section p {
+    font-size: 18px;
+    max-width: 600px;
+    line-height: 1.6;
+}
+
+    
+        /* Backgrounds for Sections */
+        .section-1 {
+    background: linear-gradient(to bottom, rgba(128, 128, 128, 0.4), rgba(0, 0, 0, 0.6)), url('p2.jpg') no-repeat center center/cover;
+    justify-content: flex-end; /* Align text to the right */
+    padding-right: 50px;
+}
+
+.section-2 {
+    background: linear-gradient(to bottom, rgba(128, 128, 128, 0.4), rgba(0, 0, 0, 0.6)), url('p3.jpg') no-repeat center center/cover;
+    justify-content: flex-start; /* Align text to the left */
+    padding-left: 50px;
+    text-align: left;
+}
+
+.section-3 {
+    background: linear-gradient(to bottom, rgba(128, 128, 128, 0.4), rgba(0, 0, 0, 0.6)), url('p4.jpg') no-repeat center center/cover;
+    justify-content: center; /* Align text to the center */
+    text-align: center;
+}
+
+.section-4 {
+    background: linear-gradient(to bottom, rgba(128, 128, 128, 0.4), rgba(0, 0, 0, 0.6)), url('p5.jpg') no-repeat center center/cover;
+    justify-content: flex-end; /* Align text to the right */
+    padding-right: 50px;
+}
+
+.section-5 {
+    background: linear-gradient(to bottom, rgba(128, 128, 128, 0.4), rgba(0, 0, 0, 0.6)), url('p6.jpg') no-repeat center center/cover;
+    justify-content: center; /* Align text to the center */
+    text-align: center;
+}
+
+    
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.8);
+        }
+    
+        footer p {
+            margin-top: 10px;
+            font-size: 1rem;
+        }
+    </style>
+        
+    <script>
+        window.addEventListener('scroll', function () {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+    </script>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <h1>FitPro Gym</h1>
+        <nav>
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="classes.html">Classes</a></li>
+                <li><a href="trainers.html">Trainers</a></li>
+                <li><a href="member.html">Membership Plans</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <div class="hero">
+        <h2>Welcome to FitPro Gym</h2>
+        <p>Your journey to a healthier, stronger you begins here.</p>
+        <a href="classes.html">Explore Our Classes</a>
+    </div>
+
+    <!-- Sections with Background Images -->
+    <div class="section section-1">
+        <div class="section-content">
+            <h3>State-of-the-Art Equipment</h3>
+            <p>Our gym is equipped with the latest machines and tools to help you achieve your fitness goals.</p>
+        </div>
+    </div>
+
+    <div class="section section-2">
+        <div class="section-content">
+            <h3>Certified Trainers</h3>
+            <p>Our team of expert trainers is here to guide and motivate you every step of the way.</p>
+        </div>
+    </div>
+
+    <div class="section section-3">
+        <div class="section-content">
+            <h3>Wide Range of Classes</h3>
+            <p>From yoga to high-intensity interval training, we have classes for every fitness level.</p>
+        </div>
+    </div>
+
+    <div class="section section-4">
+        <div class="section-content">
+            <h3>Community Support</h3>
+            <p>Join a community of like-minded individuals who inspire and uplift each other.</p>
+        </div>
+    </div>
+
+    <div class="section section-5">
+        <div class="section-content">
+            <h3>Flexible Membership Plans</h3>
+            <p>Choose a membership that fits your lifestyle with no hidden fees.</p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 FitPro Gym. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>

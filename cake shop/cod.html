@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>COD Page</title>
+</head>
+<style>
+
+ body {
+font-family: Arial, sans-serif;
+margin: 0;
+padding: 0;
+    }
+
+header {
+background-color: blue;
+color: white;
+padding: 20px;
+text-align: center;
+}
+section {
+padding: 20px;
+text-align: center;
+    }
+footer
+{
+background-color:#a1caf1 ;
+color: #a28557;
+padding: 20px;
+text-align: center;
+}
+  </style>
+<body>
+<center>
+<header>
+<h2> PERSONAL DETAILS </h2>
+</header>
+<selection>
+  <form>
+<h1>FILL THE BELOW INFORMATION</h1>
+<br>
+LIVING TYPE:
+<input type="checkbox"name="HOME"/>HOME
+<input type="checkbox"name="OFFICE"/>OFFICE
+<br><br>
+TIMINGS OF DELIVARY:
+<br>
+<input type="checkbox"name="09:00AM - 09:00PM"/>09:00AM - 09:00PM
+<br>
+<input type="checkbox"name="09:00PM - 09:00AM"/>09:00PM - 09:00AM
+<br><br>
+ADDRESS:
+<input type="text" name="ADDRESS"/>
+<br><br>
+STREET NUMBER:
+<input type="text" name="STREET NUMBER"/>
+<br><br>
+LANDMARK:
+<input type="text" name="LANDMARK"/>
+<br>
+<br>
+STATE:
+<select name="STATE">
+<option value=Madras>Madras</option>
+<option value=Andhra Pradesh>Andhra Pradesh</option>
+<option value=Arunachal Pradesh>Arunachal Pradesh</option>
+<option value=Assam>Assam</option>
+<option value=Bihar>Bihar</option>
+<option value=Chhattisgarh>Chhattisgarh</option>
+<option value=Goa>Goa</option>
+<option value=Gujarat>Gujarat</option>
+<option value=Haryana>Haryana</option>
+<option value=Himachal Pradesh>Himachal Pradesh</option>
+<option value=Jharkhand>Jharkhand</option>
+<option value=Karnataka>Karnataka</option>
+<option value=Kerala>Kerala</option>
+<option value=Madhya Pradesh>Madhya Pradesh</option>
+<option value=Maharashtra>Maharashtra</option>
+<option value=Manipur>Manipur</option>
+<option value=Meghalaya>Meghalaya</option>
+<option value=Mizoram>Mizoram</option>
+<option value=Nagaland>Nagaland</option>
+<option value=Odisha>Odisha</option>
+<option value=Punjab>Punjab</option>
+<option value=Rajasthan>Rajasthan</option>
+<option value=Sikkim>Sikkim</option>
+<option value=Tamil Nadu>Tamil Nadu</option>
+<option value=Telangana>Telangana</option>
+<option value=Tripura>Tripura</option>
+<option value=Uttar Pradesh>Uttar Pradesh</option>
+<option value=Uttarakhand>Uttarakhand</option>
+<option value=West Bengal>West Bengal</option>
+<option value=Andaman and Nicobar Islands>Andaman and Nicobar Islands</option>
+<option value=Chandigarh>Chandigarh</option>
+<option value=Dadra and Nagar Haveli and Daman and Diu>Dadra and Nagar Haveli and Daman and Diu</option>
+<option value=Lakshadweep>Lakshadweep</option>
+<option value=Delhi(NCR)>Delhi(NCR)</option>
+<option value=Delhi>Delhi</option>
+<option value=Puducherry>Puducherry</option>
+<option value=Ladakh>Ladakh</option>
+<option value=Lakshadweep>Lakshadweep</option>
+</select>
+<br>
+<br>
+
+  <input type="reset" value="Reset">
+</form>
+</selection>
+<footer>
+<script type="text/javascript"> 
+function confirmOrder() {
+  var ans = confirm("Confirm Details?");
+  if (ans == true) { 
+    alert("User Information Confirmed!");
+   
+
+    window.location.href = "payment cake.html";
+  } else { 
+    alert(" Do You Want To Quit."); 
+window.location.href = "payment cake.html";
+  } 
+}
+</script>
+
+<button onclick="confirmOrder()">Confirm?</button>
+
+</footer>
+</center>
+</body>
+</html>

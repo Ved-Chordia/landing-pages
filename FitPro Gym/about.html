@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FitPro Gym - About Us</title>
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #121212;
+            color: #fff;
+            line-height: 1.6;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 40px;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(0, 0, 0, 0.9);
+        }
+
+        header h1 {
+            font-size: 2rem;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: bold;
+            font-size: 1rem;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: #f44336;
+        }
+
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            height: 50vh;
+            background: url('about-hero.jpg') no-repeat center center/cover;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            position: relative;
+        }
+
+        .hero::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 1;
+        }
+
+        .hero h2 {
+            position: relative;
+            z-index: 2;
+            font-size: 3rem;
+        }
+
+        /* About Section */
+        .about-section {
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .about-section h3 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #f44336;
+        }
+
+        .about-section p {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            margin-bottom: 30px;
+            color: #ccc;
+        }
+
+        .about-section .values {
+            display: flex;
+            justify-content: space-between;
+            gap: 40px;
+            margin-top: 40px;
+            flex-wrap: wrap;
+        }
+
+        /* Mission and Vision Cards Styling */
+        .mission-vision {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 40px;
+        }
+
+        .value-card {
+            background: #1f1f1f;
+            padding: 30px;
+            border-radius: 15px;
+            width: 45%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s ease;
+        }
+
+        .value-card:hover {
+            transform: scale(1.05);
+        }
+
+        .value-card h4 {
+            font-size: 2rem;
+            margin-bottom: 15px;
+            color: #f44336;
+        }
+
+        /* Values Section Cards */
+.value-card {
+    background: #1f1f1f;
+    padding: 30px;
+    border-radius: 15px;
+    width: 30%; /* Reduced the width */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease;
+}
+
+.value-card:hover {
+    transform: scale(1.05);
+}
+
+.value-card h4 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+    color: #f44336;
+}
+
+.value-card p {
+    font-size: 1.1rem;
+    color: #ccc;
+}
+
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.8);
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <h1>FitPro Gym</h1>
+        <nav>
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="classes.html">Classes</a></li>
+                <li><a href="trainers.html">Trainers</a></li>
+                <li><a href="member.html">Membership Plans</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <div class="hero">
+        <h2>About FitPro Gym</h2>
+    </div>
+
+    <!-- About Us Section -->
+    <section class="about-section">
+        <!-- Mission and Vision Cards Side by Side -->
+        <div class="mission-vision">
+            <!-- Mission Card -->
+            <div class="value-card">
+                <h4>Our Mission</h4>
+                <p>At FitPro Gym, we believe that fitness is not just about building strength, but about transforming lives. Our mission is to provide a welcoming and motivating space where individuals of all fitness levels can achieve their health goals. We are committed to helping our members achieve success with personalized training, expert advice, and the support they need to feel their best every day. We strive to create an environment that is inclusive, supportive, and empowering for everyone. We believe in creating a community where each member is encouraged to push their boundaries and exceed their own expectations. Whether it’s through group classes, personal training, or state-of-the-art equipment, we provide the tools and resources needed to help our members reach their fullest potential.</p>
+            </div>
+
+            <!-- Vision Card -->
+            <div class="value-card">
+                <h4>Our Vision</h4>
+                <p>Our vision is to become the leading fitness destination in the community, where people not only work on their fitness but build lifelong healthy habits and connect with others in a supportive and encouraging environment. We envision a place where everyone feels motivated to push their boundaries, reach new goals, and be part of a community that values health and well-being above all else. Through innovation, exceptional training, and personal support, we aim to make a positive impact on the lives of our members. We aim to expand our reach to inspire individuals beyond just fitness, cultivating a lifestyle centered around holistic well-being, mental health, and personal empowerment. We will create an environment where members of all backgrounds can come together, share experiences, and grow into the best versions of themselves.</p>
+            </div>
+        </div>
+
+        <!-- Values Section -->
+        <h3>Our Values</h3>
+        <div class="values">
+            <!-- Value 1 -->
+            <div class="value-card">
+                <h4>Passion</h4>
+                <p>We are passionate about fitness and are dedicated to helping every member reach their potential.</p>
+            </div>
+
+            <!-- Value 2 -->
+            <div class="value-card">
+                <h4>Community</h4>
+                <p>We believe in fostering a supportive community where everyone can grow together and achieve their fitness goals.</p>
+            </div>
+
+            <!-- Value 3 -->
+            <div class="value-card">
+                <h4>Excellence</h4>
+                <p>We strive for excellence in everything we do, from the equipment we use to the services we provide.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 FitPro Gym. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>

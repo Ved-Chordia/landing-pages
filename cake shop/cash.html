@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cash on Delivery</title>
+    <style>
+        body {
+            background-color: #f0f0f0;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+        }
+
+        header, footer {
+            background-color: #3498db;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+        }
+
+        nav {
+            background-color: #3498db;
+            padding: 10px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-right: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        button {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            background-color: #3498db;
+            color: white;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #2980b9;
+        }
+
+        form {
+            max-width: 400px;
+            margin: 20px auto;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        select {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            background-color: #4caf50;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Cash on Delivery</h1>
+    </header>
+    <nav>
+        <a href="payment cake.html">Home</a>
+    </nav>
+
+    <form onsubmit="confirmation()">
+        <h2>Delivery Address</h2>
+        <label for="state">Select State:</label>
+        <select id="state" name="state">
+            <option value=Madras>Madras</option>
+            <option value=Andhra Pradesh>Andhra Pradesh</option>
+            <option value=Arunachal Pradesh>Arunachal Pradesh</option>
+            <option value=Assam>Assam</option>
+            <option value=Bihar>Bihar</option>
+            <option value=Chhattisgarh>Chhattisgarh</option>
+            <option value=Goa>Goa</option>
+            <option value=Gujarat>Gujarat</option>
+            <option value=Haryana>Haryana</option>
+            <option value=Himachal Pradesh>Himachal Pradesh</option>
+            <option value=Jharkhand>Jharkhand</option>
+            <option value=Karnataka>Karnataka</option>
+            <option value=Kerala>Kerala</option>
+            <option value=Madhya Pradesh>Madhya Pradesh</option>
+            <option value=Maharashtra>Maharashtra</option>
+            <option value=Manipur>Manipur</option>
+            <option value=Meghalaya>Meghalaya</option>
+            <option value=Mizoram>Mizoram</option>
+            <option value=Nagaland>Nagaland</option>
+            <option value=Odisha>Odisha</option>
+            <option value=Punjab>Punjab</option>
+            <option value=Rajasthan>Rajasthan</option>
+            <option value=Sikkim>Sikkim</option>
+            <option value=Tamil Nadu>Tamil Nadu</option>
+            <option value=Telangana>Telangana</option>
+            <option value=Tripura>Tripura</option>
+            <option value=Uttar Pradesh>Uttar Pradesh</option>
+            <option value=Uttarakhand>Uttarakhand</option>
+            <option value=West Bengal>West Bengal</option>
+            <option value=Andaman and Nicobar Islands>Andaman and Nicobar Islands</option>
+            <option value=Chandigarh>Chandigarh</option>
+            <option value=Dadra and Nagar Haveli and Daman and Diu>Dadra and Nagar Haveli and Daman and Diu</option>
+            <option value=Lakshadweep>Lakshadweep</option>
+            <option value=Delhi(NCR)>Delhi(NCR)</option>
+            <option value=Delhi>Delhi</option>
+            <option value=Puducherry>Puducherry</option>
+            <option value=Ladakh>Ladakh</option>
+            <option value=Lakshadweep>Lakshadweep</option>
+            <!-- Add more states here -->
+        </select>
+
+        <label for="timings">Select Delivery Timings:</label>
+        <select id="timings" name="timings">
+            <option value="Morning">Morning</option>
+            <option value="Afternoon">Afternoon</option>
+            <option value="Evening">Evening</option>
+        </select>
+
+        <label for="mobile">Mobile Number:</label>
+        <input type="text" id="mobile" name="mobile" placeholder="Enter your mobile number">
+
+        <label for="email">Email Address:</label>
+        <input type="email" id="email" name="email" placeholder="Enter your email address">
+
+        <input type="submit" value="Submit">
+    </form>
+
+    <footer>
+        <p>© 2023 Berrylicious. All rights reserved. | Privacy Policy | Terms of Service ~ (Abhyas Kathuria)</p>
+    </footer>
+
+    <script>
+        function confirmation() {
+            var result = confirm("Thank you for shopping! Press OK to proceed to payment.");
+            if (result) {
+                window.location.href="payment cake.html"; // Use a relative path or URL
+            }
+            return false;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu - Coffee Heaven</title>
+    <style>
+        /* Internal CSS */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #faf3e0;
+            color: #4b3832;
+        }
+
+        header {
+            background-color: #6f4e37;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 50px;
+        }
+
+        header h1 {
+            font-size: 36px;
+            font-weight: bold;
+            color: #fff;
+            margin: 0;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            gap: 30px;
+        }
+
+        nav ul li {
+            display: inline;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            font-size: 18px;
+            color: #fff;
+            transition: color 0.3s ease-in-out;
+        }
+
+        nav ul li a:hover {
+            color: #d2b48c;
+        }
+        .menu-section {
+            padding: 40px 20px;
+        }
+
+        .menu-section h2 {
+            font-size: 36px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .product-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .product-card {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            width: 200px;
+            padding: 20px;
+            cursor: pointer;
+        }
+
+        .product-card:hover {
+            transform: scale(1.05);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .product-card img {
+        width: 100%;
+        height: 200px; /* Ensures uniform height */
+        object-fit: cover; /* Maintains aspect ratio and fills the area */
+        border-radius: 10px;
+    }
+
+        .product-card h3 {
+            font-size: 20px;
+            margin: 10px 0;
+            color: #4b3832;
+        }
+
+        .product-card p {
+            font-size: 14px;
+            color: #6f4e37;
+            margin: 5px 0 10px;
+        }
+
+        .product-card span {
+            font-weight: bold;
+            color: #4b3832;
+        }
+        footer {
+            background-color: #d2b48c;
+            text-align: center;
+            padding: 20px 0;
+            color: #4b3832;
+        }
+
+    </style>
+</head>
+<body>
+
+<header>
+    <h1><i class="fas fa-coffee"></i>Coffee Heaven</h1>
+    <nav>
+        <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="order.html">Order</a></li>
+            <li><a href="log.html">Log In</a></li>
+        </ul>
+    </nav>
+</header>
+
+<section class="menu-section">
+    <h2>Beverages</h2>
+    <div class="product-grid">
+        <div class="product-card" onclick="addToBill('Classic Latte', 180, 'menu/beverages/p1.jpg', 'A rich and creamy espresso blended with steamed milk.')">
+            <img src="menu/beverages/p1.jpg" alt="Classic Latte">
+            <h3>Classic Latte</h3>
+            <p>A rich and creamy espresso blended with steamed milk.</p>
+            <span>₹180</span>
+        </div>
+        <div class="product-card" onclick="addToBill('Cappuccino', 200, 'menu/beverages/p2.jpg', 'A perfect mix of espresso, steamed milk, and foam.')">
+            <img src="menu/beverages/p2.jpg" alt="Cappuccino">
+            <h3>Cappuccino</h3>
+            <p>A perfect mix of espresso, steamed milk, and foam.</p>
+            <span>₹200</span>
+        </div>
+        <div class="product-card" onclick="addToBill('Espresso', 150, 'menu/beverages/p3.jpg', 'Bold and intense, brewed to perfection for coffee lovers.')">
+            <img src="menu/beverages/p3.jpg" alt="Espresso">
+            <h3>Espresso</h3>
+            <p>Bold and intense, brewed to perfection for coffee lovers.</p>
+            <span>₹150</span>
+        </div>
+        <div class="product-card" onclick="addToBill('Caramel Macchiato', 250, 'menu/beverages/p4.jpg', 'Rich espresso with caramel syrup and steamed milk.')">
+            <img src="menu/beverages/p4.jpg" alt="Caramel Macchiato">
+            <h3>Caramel Macchiato</h3>
+            <p>Rich espresso with caramel syrup and steamed milk.</p>
+            <span>₹250</span>
+        </div>
+        <div class="product-card" onclick="addToBill('Iced Mocha', 220, 'menu/beverages/p5.jpg', 'Chocolate-flavored espresso served over ice with milk.')">
+            <img src="menu/beverages/p5.jpg" alt="Iced Mocha">
+            <h3>Iced Mocha</h3>
+            <p>Chocolate-flavored espresso served over ice with milk.</p>
+            <span>₹220</span>
+        </div>
+        <div class="product-card" onclick="addToBill('Vanilla Latte', 200, 'menu/beverages/p6.jpg', 'Sweetened with a hint of vanilla syrup and creamy steamed milk.')">
+            <img src="menu/beverages/p6.jpg" alt="Vanilla Latte">
+            <h3>Vanilla Latte</h3>
+            <p>Sweetened with a hint of vanilla syrup and creamy steamed milk.</p>
+            <span>₹200</span>
+        </div>
+        <div class="product-card" onclick="addToBill('Hazelnut Latte', 220, 'menu/beverages/p7.jpg', 'A nutty twist on a classic latte with hazelnut flavor.')">
+            <img src="menu/beverages/p7.jpg" alt="Hazelnut Latte">
+            <h3>Hazelnut Latte</h3>
+            <p>A nutty twist on a classic latte with hazelnut flavor.</p>
+            <span>₹220</span>
+        </div>
+        <div class="product-card" onclick="addToBill('Cold Brew', 190, 'menu/beverages/p8.jpg', 'Slowly steeped for a smooth and refreshing taste.')">
+            <img src="menu/beverages/p8.jpg" alt="Cold Brew">
+            <h3>Cold Brew</h3>
+            <p>Slowly steeped for a smooth and refreshing taste.</p>
+            <span>₹190</span>
+        </div>
+        <div class="product-card" onclick="addToBill('Matcha Latte', 250, 'meun/beverages/p9.jpg', 'Green tea matcha blended with creamy milk for a zen vibe.')">
+            <img src="menu/beverages/p9.jpg" alt="Matcha Latte">
+            <h3>Matcha Latte</h3>
+            <p>Green tea matcha blended with creamy milk for a zen vibe.</p>
+            <span>₹250</span>
+        </div>
+        <div class="product-card" onclick="addToBill('Chai Latte', 180, 'menu/beverages/p10.jpg', 'Aromatic chai spices blended with frothy steamed milk.')">
+            <img src="menu/beverages/p10.jpg" alt="Chai Latte">
+            <h3>Chai Latte</h3>
+            <p>Aromatic chai spices blended with frothy steamed milk.</p>
+            <span>₹180</span>
+        </div>
+        <div class="product-card" onclick="addToBill('Iced Americano', 150, 'menu/beverages/p11.jpg', 'Espresso poured over chilled water for a refreshing drink.')">
+            <img src="menu/beverages/p11.jpg" alt="Iced Americano">
+            <h3>Iced Americano</h3>
+            <p>Espresso poured over chilled water for a refreshing drink.</p>
+            <span>₹150</span>
+        </div>
+        <div class="product-card" onclick="addToBill('Affogato', 300 , 'menu/beverages/p12.jpg', 'A scoop of vanilla ice cream drowned in rich espresso.')">
+            <img src="menu/beverages/p12.jpg" alt="Affogato">
+            <h3>Affogato</h3>
+            <p>A scoop of vanilla ice cream drowned in rich espresso.</p>
+            <span>₹300</span>
+        </div>
+        
+    </div>
+
+    <h2>Food</h2>
+    <div class="product-grid">
+        <div class="product-card" onclick="addToBill('Croissant', 80, 'menu/food/p1.jpg', 'Flaky, buttery pastry, baked fresh daily.')">
+            <img src="menu/food/p1.jpg" alt="Croissant">
+            <h3>Croissant</h3>
+            <p>Flaky, buttery pastry, baked fresh daily.</p>
+            <span>₹80</span>
+        </div>
+        <div class="product-card" onclick="addToBill('Blueberry Muffin', 120, 'menu/food/p2.jpg', 'Soft and sweet, loaded with fresh blueberries.')">
+            <img src="menu/food/p2.jpg" alt="Blueberry Muffin">
+            <h3>Blueberry Muffin</h3>
+            <p>Soft and sweet, loaded with fresh blueberries.</p>
+            <span>₹120</span>
+        </div>
+        <div class="product-card" onclick="addToBill('Sandwich', 150, 'menu/food/p3.jpg', 'Freshly made with premium ingredients. ')">
+            <img src="menu/food/p3.jpg" alt="Sandwich">
+            <h3>Classic Sandwich</h3>
+            <p>Freshly made with premium ingredients.</p>
+            <span>₹150</span>
+        </div>
+        <div class="product-card" onclick="addToBill('Cheese Danish', 130, 'menu/food/p4.jpg', 'Delicious, creamy cheese filling in flaky pastry.')">
+            <img src="menu/food/p4.jpg" alt="Cheese Danish">
+            <h3>Cheese Danish</h3>
+            <p>Delicious, creamy cheese filling in flaky pastry.</p>
+            <span>₹130</span>
+        </div>
+        <div class="product-card" onclick="addToBill('Chocolate Cake', 200, 'menu/food/p5.jpg', 'Moist chocolate cake with rich frosting.')">
+            <img src="menu/food/p5.jpg" alt="Chocolate Cake">
+            <h3>Chocolate Cake</h3>
+            <p>Moist chocolate cake with rich frosting.</p>
+            <span>₹200</span>
+        </div>
+        <div class="product-card" onclick="addToBill('Bagel with Cream Cheese', 100, 'menu/food/p6.jpg', 'Freshly baked bagel served with a rich cream cheese spread.')">
+            <img src="menu/food/p6.jpg" alt="Bagel with Cream Cheese">
+            <h3>Bagel with Cream Cheese</h3>
+            <p>Freshly baked bagel served with a rich cream cheese spread.</p>
+            <span>₹100</span>
+        </div>
+        <div class="product-card" onclick="addToBill('Veg Puff', 70, 'menu/food/p7.jpg', 'A flaky pastry stuffed with spiced vegetable filling.')">
+            <img src="menu/food/p7.jpg" alt="Veg Puff">
+            <h3>Veg Puff</h3>
+            <p>A flaky pastry stuffed with spiced vegetable filling.</p>
+            <span>₹70</span>
+        </div>
+        <div class="product-card" onclick="addToBill('Quiche', 150, 'menu/food/p8.jpg', 'Delicate egg custard baked with cheese and veggies.')">
+            <img src="menu/food/p8.jpg" alt="Quiche">
+            <h3>Quiche</h3>
+            <p>Delicate egg custard baked with cheese and veggies.</p>
+            <span>₹150</span>
+        </div>
+        
+    </div>
+</section>
+<footer>
+    <p>&copy; 2024 Coffee Heaven | Made with ☕ and ❤️</p>
+</footer>
+
+<script>
+    // Function to redirect and store product details in localStorage
+    function addToBill(name, price, image, description) {
+        const productDetails = {
+            name: name,
+            price: price,
+            image: image,
+            description: description
+        };
+
+        // Save the product details in localStorage
+        localStorage.setItem('selectedProduct', JSON.stringify(productDetails));
+
+        // Redirect to the bill page
+        window.location.href = 'bill.html';
+    }
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Your Cart at Accessorize Your Style">
+  <meta name="keywords" content="cart, accessories, shopping, checkout">
+  <title>Accessory Shop - Cart</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    body {
+      font-family: 'Georgia', serif;
+      background-color: #f7f2f1;
+      color: #4a4a4a;
+    }
+
+    header {
+      text-align: center;
+      background-color: #e8d1d1;
+      padding: 20px;
+    }
+
+    header h1 {
+      font-size: 2.8rem;
+      color: #7a6565;
+    }
+
+    header p {
+      color: #a7a1a1;
+      font-size: 1.2rem;
+    }
+
+    .cart-container {
+      text-align: center;
+      margin: 20px;
+    }
+
+    .cart-item {
+      margin: 10px;
+      padding: 10px;
+      background-color: #f4eaea;
+      border-radius: 8px;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .cart-item img {
+      width: 80px; /* Increased image size */
+      height: 80px;
+      object-fit: cover;
+      margin-right: 15px;
+    }
+
+    button {
+      background-color: #e3bcbc;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #d6b1b1;
+    }
+
+    #total {
+      font-size: 1.5rem;
+      margin: 20px 0;
+    }
+
+    .cart-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1><i class="fas fa-gem"></i> Accessorize Your Style</h1>
+    <p>Your Cart</p>
+  </header>
+
+  <section class="cart-container">
+    <h2>Your Cart</h2>
+    <div id="cart-items"></div>
+    <p id="total">Total: $0.00</p>
+    <div class="cart-buttons">
+      <button onclick="clearCart()">Clear Cart</button>
+      <button onclick="buyNow()">Buy Now</button>
+    </div>
+  </section>
+
+<script>
+    // Function to load and display cart items
+    function loadCart() {
+      // Get the cart from localStorage
+      let cart = JSON.parse(localStorage.getItem('cart')) || [];
+      
+      // Get the cart items container
+      const cartItemsContainer = document.getElementById('cart-items');
+      
+      // Clear any existing cart items
+      cartItemsContainer.innerHTML = '';
+      
+      // If the cart is empty, display a message
+      if (cart.length === 0) {
+        cartItemsContainer.innerHTML = '<p id="empty-cart">Your cart is empty.</p>';
+        document.getElementById('total').innerText = "Total: $0.00";
+        return;
+      }
+
+      // Calculate total price
+      let total = 0;
+
+      // Display each cart item
+      cart.forEach(item => {
+        const cartItemDiv = document.createElement('div');
+        cartItemDiv.classList.add('cart-item');
+        
+        // Create the item content (image, name, price)
+        cartItemDiv.innerHTML = `
+          <img src="${item.image}" alt="${item.name}">
+          <div class="details">
+            <p class="name">${item.name}</p>
+            <p class="price">$${item.price}</p>
+          </div>
+          <div class="remove" onclick="removeFromCart('${item.name}')">Remove</div>
+        `;
+        
+        // Append the cart item to the container
+        cartItemsContainer.appendChild(cartItemDiv);
+
+        // Update the total price
+        total += item.price;
+      });
+
+      // Display the total price
+      document.getElementById('total').innerText = `Total: $${total.toFixed(2)}`;
+    }
+
+    // Function to remove an item from the cart
+    function removeFromCart(productName) {
+      // Get the cart from localStorage
+      let cart = JSON.parse(localStorage.getItem('cart')) || [];
+      
+      // Filter out the item to be removed
+      cart = cart.filter(item => item.name !== productName);
+      
+      // Save the updated cart back to localStorage
+      localStorage.setItem('cart', JSON.stringify(cart));
+      
+      // Reload the cart
+      loadCart();
+    }
+
+    // Function to clear the cart
+    function clearCart() {
+      // Clear the cart from localStorage
+      localStorage.removeItem('cart');
+      
+      // Reload the cart
+      loadCart();
+    }
+
+    // Function for the "Buy Now" button
+    function buyNow() {
+      // Get the cart from localStorage
+      let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+      // Check if the cart is empty
+      if (cart.length === 0) {
+        alert("Your cart is empty.");
+      } else {
+        const confirmation = confirm("Are you sure you want to proceed to checkout?");
+        if (confirmation) {
+          window.location.href = "buy.html"; // Redirect to buy.html
+        }
+      }
+    }
+
+    // Load cart items when the page loads
+    loadCart();
+  </script>
+
+</body>
+</html>

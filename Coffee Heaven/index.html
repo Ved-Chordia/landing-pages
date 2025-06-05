@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coffee Heaven - Sip Happiness</title>
+    <style>
+        /* Internal CSS */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #faf3e0;
+            color: #4b3832;
+        }
+        header {
+            background-color: #6f4e37;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 50px;
+        }
+
+        header h1 {
+            font-size: 36px;
+            font-weight: bold;
+            color: #fff;
+            margin: 0;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            gap: 30px;
+        }
+
+        nav ul li {
+            display: inline;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            font-size: 18px;
+            color: #fff;
+            transition: color 0.3s ease-in-out;
+        }
+
+        nav ul li a:hover {
+            color: #d2b48c;
+        }
+
+        .hero-section {
+            height: 300px;
+            background-image: url('h1.jpg'); /* Replace with a hero coffee image */
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: black;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero-section h2 {
+            font-size: 48px;
+            margin-bottom: 10px;
+        }
+
+        .hero-section p {
+            font-size: 18px;
+        }
+
+        .best-sellers {
+            margin: 50px 20px;
+            text-align: center;
+        }
+
+        .best-sellers h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+            color: #4b3832;
+        }
+
+        .product-slider {
+            display: flex;
+            overflow: hidden;
+            gap: 20px;
+            padding: 20px;
+            scroll-behavior: smooth;
+        }
+
+        .product-slider::-webkit-scrollbar {
+            display: none; /* Hide the scrollbar */
+        }
+
+        .product {
+            flex: 0 0 auto;
+            width: 250px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            cursor: pointer;
+            transition: transform 0.3s ease-in-out, opacity 0.5s ease-in-out;
+        }
+
+        .product:hover {
+            transform: scale(1.1);
+            opacity: 0.9;
+        }
+
+        .product img {
+    width: 100%;
+    height: 250px; /* Set a consistent height for all images */
+    object-fit: cover; /* Ensures images maintain aspect ratio and fill the container */
+    border-radius: 10px 10px 0 0;
+    transition: transform 0.3s ease-in-out;
+}
+
+
+        .product p {
+            padding: 10px 0;
+            font-weight: bold;
+        }
+
+        .product .description {
+            padding: 0 10px;
+            font-size: 14px;
+            color: #555;
+        }
+
+        .featured {
+        text-align: center;
+        margin: 50px 0;
+    }
+
+        .featured h2 {
+        font-size: 2rem;
+        margin-bottom: 20px;
+        color: #6f4e37;
+    }
+
+        .featured-collections {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        flex-wrap: wrap;
+    }
+
+        .collection {
+        text-align: center;
+        width: 300px;
+    }
+
+        .collection img {
+        width: 100%;
+        height: 300px; /* Consistent height for all images */
+        object-fit: cover; /* Ensures images maintain their aspect ratio */
+        border-radius: 8px; /* Optional: rounded corners */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .collection img:hover {
+        transform: scale(1.05); /* Slight zoom on hover */
+    }
+
+    .collection p {
+        margin-top: 10px;
+        font-size: 1.1rem;
+        color: #4b3832;
+    }
+
+        .reviews {
+            padding: 40px 20px;
+            background-color: #e7dccd;
+        }
+
+        .reviews h2 {
+            font-size: 36px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .review {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .review p {
+            font-style: italic;
+            margin-bottom: 10px;
+        }
+
+        footer {
+            background-color: #d2b48c;
+            text-align: center;
+            padding: 20px 0;
+            color: #4b3832;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1><i class="fas fa-coffee"></i>Coffee Heaven</h1>
+        <nav>
+            <ul>
+                <li><a href="menu.html">Menu</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="order.html">Order</a></li>
+                <li><a href="log.html">Log In</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero-section">
+        <h2>Welcome to Coffee Heaven</h2>
+        <h3>Sip Happiness, One Cup at a Time</h3>
+    </section>
+
+    <section class="best-sellers">
+        <h2>Best Sellers</h2>
+        <div class="product-slider" id="product-slider">
+            <div class="product" onclick="redirectToMenu()">
+                <img src="home/p1.jpg" alt="Latte">
+                <p>Classic Latte</p>
+                <p class="description">A rich and creamy coffee experience, served hot.</p>
+            </div>
+            <div class="product" onclick="redirectToMenu()">
+                <img src="home/p2.jpg" alt="Cappuccino">
+                <p>Cappuccino Delight</p>
+                <p class="description">Espresso topped with foamy steamed milk and cocoa dust.</p>
+            </div>
+            <div class="product" onclick="redirectToMenu()">
+                <img src="home/p3.jpg" alt="Espresso">
+                <p>Espresso Shot</p>
+                <p class="description">Bold and full-bodied, for the serious coffee lover.</p>
+            </div>
+            <div class="product" onclick="redirectToMenu()">
+                <img src="home/p4.jpg" alt="Mocha">
+                <p>Mocha Bliss</p>
+                <p class="description">A blend of chocolate and coffee for the perfect treat.</p>
+            </div>
+            <div class="product" onclick="redirectToMenu()">
+                <img src="home/p5.jpg" alt="Caramel">
+                <p>Caramel Macchiato</p>
+                <p class="description">A sweet and creamy caramel delight, layered with espresso.</p>
+            </div>
+            <div class="product" onclick="redirectToMenu()">
+                <img src="home/p6.jpg" alt="Flat White">
+                <p>Flat White</p>
+                <p class="description">Velvety smooth, with a perfect balance of espresso and milk.</p>
+            </div>
+            <div class="product" onclick="redirectToMenu()">
+                <img src="home/p7.jpg" alt="Iced Latte">
+                <p>Iced Latte</p>
+                <p class="description">Chilled espresso with a smooth milk finish, perfect for warm days.</p>
+            </div>
+            <div class="product" onclick="redirectToMenu()">
+                <img src="home/p8.jpg" alt="Affogato">
+                <p>Affogato</p>
+                <p class="description">A scoop of vanilla ice cream drowned in hot espresso.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="featured">
+        <h2>Featured Collections</h2>
+        <div class="featured-collections">
+            <div class="collection">
+                <a href="order.html">
+                    <img src="home/P9.jpg" alt="Coffee Beans">
+                    <p>Premium Coffee Beans</p>
+                </a>
+            </div>
+            <div class="collection">
+                <a href="order.html">
+                    <img src="home/p10.jpg" alt="Coffee Mugs">
+                    <p>Stylish Coffee Mugs</p>
+                </a>
+            </div>
+            <div class="collection">
+                <a href="order.html">
+                    <img src="home/p11.jpg" alt="Brewing Kits">
+                    <p>Brewing Kits</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="reviews">
+        <h2>Customer Reviews</h2>
+        <div class="review">
+            <p>"The best coffee I've ever had!"</p>
+            <span>– Sarah</span>
+        </div>
+        <div class="review">
+            <p>"A must-visit for all coffee lovers!"</p>
+            <span>– John</span>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Coffee Heaven | Made with ☕ and ❤️</p>
+    </footer>
+
+    <script>
+        // JavaScript for the product slider (continuous scroll effect)
+        const slider = document.getElementById('product-slider');
+
+        function autoScroll() {
+            const scrollWidth = slider.scrollWidth;
+            const visibleWidth = slider.offsetWidth;
+            let scrollAmount = slider.scrollLeft + 2; // Scroll increment
+
+            if (scrollAmount >= scrollWidth - visibleWidth) {
+                slider.scrollLeft = 0; // Reset scroll to the beginning
+            }
+
+            slider.scrollTo({ left: scrollAmount, behavior: 'smooth' });
+        }
+
+        setInterval(autoScroll, 30);
+
+        function redirectToMenu() {
+            window.location.href = 'menu.html#bestsellers';
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Accessory Shop - Products</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    /* Custom styling for product images */
+    .product img {
+      width: 120px;
+      height: 120px;
+      object-fit: cover;
+      border-radius: 8px;
+      background-color: #EFC3CA;
+    }
+
+    /* Flexbox layout for the product list */
+    .product-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: space-evenly;
+      padding: 20px;
+    }
+
+    /* Style for each product box */
+    .product {
+      text-align: center;
+      width: 200px;
+      height: 300px;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s ease-in-out;
+      background-color: #fff;
+    }
+
+    /* Hover effect to slightly enlarge the box */
+    .product:hover {
+      transform: scale(1.05);
+    }
+
+    /* Product name font */
+    .product h3 {
+      margin-top: 10px;
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    /* Product description font */
+    .product p.description {
+      font-size: 14px;
+      color: #555;
+      margin: 5px 0;
+    }
+
+    /* Product price font */
+    .product p.price {
+      font-size: 16px;
+      color: #333;
+      margin: 5px 0;
+    }
+
+    /* Add to Cart button style */
+    .product button {
+      margin-top: 10px;
+      padding: 12px 20px;
+      font-size: 16px;
+      background-color: #e9d1d1;
+      color: black;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      width: 100%;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Button hover effect */
+    .product button:hover {
+      background-color: #d6b1b1;
+      transform: scale(1.05);
+    }
+    #copyright {
+      background-color: #e8d1d1;
+      color: #7a6565;
+      text-align: center;
+      padding: 40px 20px;
+      margin-top: 40px;
+      border-radius: 10px;
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1), 0px 0px 30px rgba(255, 255, 255, 0.9);
+    }
+
+    #copyright h3 {
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+
+    #copyright p {
+      font-size: 18px;
+    }
+
+    /* Animations */
+    #copyright {
+      animation: fadeIn 2s ease;
+    }
+
+
+  </style>
+</head>
+<body>
+  <header>
+    <h1><i class="fas fa-gem"></i> Accessorize Your Style</h1>
+    <p>Explore our curated collection of stylish phone accessories.</p>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+      <li><a href="products.html"><i class="fas fa-box-open"></i> Products</a></li>
+      <li><a href="cart.html"><i class="fas fa-shopping-cart"></i> Cart</a></li>
+      <li><a href="login.html">Login</a></li>
+    </ul>
+  </nav>
+
+  <section id="products">
+    <h2>Our Products</h2>
+    <div class="product-list">
+      <!-- Product 1 -->
+      <div class="product">
+        <img src="product images/p1.jfif" alt="Phone Charm">
+        <h3>Phone Charm</h3>
+        <p class="description">A cute charm to accessorize your phone.</p>
+        <p class="price">$10.00</p>
+        <button>Add to Cart</button>
+      </div>
+      <!-- Product 2 -->
+      <div class="product">
+        <img src="product images/p2.jfif" alt="Phone Case">
+        <h3>Phone Case</h3>
+        <p class="description">Protect your phone in style with this case.</p>
+        <p class="price">$15.00</p>
+        <button>Add to Cart</button>
+      </div>
+      <!-- Product 3 -->
+      <div class="product">
+        <img src="product images/p3.jfif" alt="Sticker Pack">
+        <h3>Sticker Pack</h3>
+        <p class="description">Decorate with these fun and vibrant stickers.</p>
+        <p class="price">$5.00</p>
+        <button>Add to Cart</button>
+      </div>
+      <!-- Product 4 -->
+      <div class="product">
+        <img src="product images/p4.jfif" alt="Kawaii Keychain">
+        <h3>Kawaii Keychain</h3>
+        <p class="description">Adorable keychain to match your style.</p>
+        <p class="price">$8.00</p>
+        <button>Add to Cart</button>
+      </div>
+      <!-- Product 5 -->
+      <div class="product">
+        <img src="product images/p5.jfif" alt="PopSocket">
+        <h3>PopSocket</h3>
+        <p class="description">A handy grip for your phone.</p>
+        <p class="price">$12.00</p>
+        <button>Add to Cart</button>
+      </div>
+      <!-- Product 6 -->
+      <div class="product">
+        <img src="product images/p6.jfif" alt="Phone Stand">
+        <h3>Phone Stand</h3>
+        <p class="description">A stylish and functional phone stand.</p>
+        <p class="price">$18.00</p>
+        <button>Add to Cart</button>
+      </div>
+      <!-- Product 7 -->
+      <div class="product">
+        <img src="product images/p7.jfif" alt="Earphones">
+        <h3>Earphones</h3>
+        <p class="description">Quality sound and a sleek design.</p>
+        <p class="price">$20.00</p>
+        <button>Add to Cart</button>
+      </div>
+      <!-- Product 8 -->
+      <div class="product">
+        <img src="product images/p8.jfif" alt="Power Bank">
+        <h3>Power Bank</h3>
+        <p class="description">Portable power for your devices.</p>
+        <p class="price">$25.00</p>
+        <button>Add to Cart</button>
+      </div>
+      <!-- Product 9 -->
+      <div class="product">
+        <img src="product images/p9.jfif" alt="Phone Holder">
+        <h3>Phone Holder</h3>
+        <p class="description">A convenient and cute phone holder.</p>
+        <p class="price">$12.00</p>
+        <button>Add to Cart</button>
+      </div>
+      <!-- Product 10 -->
+      <div class="product">
+        <img src="product images/p10.jfif" alt="Stylish Headphones">
+        <h3>Stylish Headphones</h3>
+        <p class="description">Experience premium sound with style.</p>
+        <p class="price">$35.00</p>
+        <button>Add to Cart</button>
+      </div>
+      <!-- Product 11 -->
+      <div class="product">
+        <img src="product images/p11.jfif" alt="Customizable Charm">
+        <h3>Customizable Charm</h3>
+        <p class="description">Make it your own with this charm.</p>
+        <p class="price">$20.00</p>
+        <button>Add to Cart</button>
+      </div>
+      <!-- Product 12 -->
+      <div class="product">
+        <img src="product images/p12.jfif" alt="Minimalist Phone Case">
+        <h3>Minimalist Phone Case</h3>
+        <p class="description">Simple yet elegant phone protection.</p>
+        <p class="price">$18.00</p>
+        <button>Add to Cart</button>
+      </div>
+      <!-- Product 13 -->
+      <div class="product">
+        <img src="product images/p13.jfif" alt="MagSafe Holder">
+        <h3>MagSafe Holder</h3>
+        <p class="description">Secure and versatile phone holder.</p>
+        <p class="price">$30.00</p>
+        <button>Add to Cart</button>
+      </div>
+      <!-- Product 14 -->
+      <div class="product">
+        <img src="product images/p14.jfif" alt="Glitter Charm">
+        <h3>Glitter Charm</h3>
+        <p class="description">Add sparkle to your accessories.</p>
+        <p class="price">$15.00</p>
+        <button>Add to Cart</button>
+      </div>
+      <!-- Product 15 -->
+      <div class="product">
+        <img src="product images/p15.jfif" alt="Pastel Phone Case">
+        <h3>Pastel Phone Case</h3>
+        <p class="description">Soft hues for a dreamy vibe.</p>
+        <p class="price">$22.00</p>
+        <button>Add to Cart</button>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+  <!-- copyright-->
+  <section id="copyright">
+    <p>&copy Accessorieze Your Style -2024</p>
+  </section>
+  </footer>
+
+  <script>
+  // Function to add a product to the cart
+  function addToCart(name, price, image) {
+    // Get the cart from localStorage, or initialize an empty array if it's not set
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    
+    // Create a new item object to store in the cart
+    const newItem = {
+      name: name,
+      price: price,
+      image: image
+    };
+
+    // Add the new item to the cart
+    cart.push(newItem);
+    
+    // Save the updated cart back to localStorage
+    localStorage.setItem('cart', JSON.stringify(cart));
+
+    // Alert the user
+    alert(`${name} has been added to your cart!`);
+  }
+
+  // Attach event listeners to all "Add to Cart" buttons
+  document.querySelectorAll('.product button').forEach((button, index) => {
+    // Each button corresponds to a product, so get the name, price, and image dynamically
+    const productName = button.previousElementSibling.previousElementSibling.previousElementSibling.innerText;
+    const productPrice = parseFloat(button.previousElementSibling.innerText.replace('$', ''));
+    const productImage = button.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.src;
+
+    // Add event listener to each button
+    button.addEventListener('click', () => addToCart(productName, productPrice, productImage));
+  });
+</script>
+
+
+</body>
+</html>

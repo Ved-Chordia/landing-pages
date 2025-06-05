@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us - AniWears</title>
+  <style>
+    /* Global Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Arial', sans-serif;
+    }
+
+    /* Body */
+    body {
+      background-color: #f9f9f9;
+      color: #333;
+      line-height: 1.6;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    /* Header */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 30px;
+      background-color: #1a1a1d;
+      color: #fff;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    header .logo img {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    header nav a {
+      color: #ddd;
+      margin: 0 20px;
+      text-decoration: none;
+      font-size: 16px;
+      transition: color 0.3s;
+    }
+
+    header nav a:hover {
+      color: #f90;
+    }
+
+    /* About Section */
+    .about-container {
+      padding: 60px 20px;
+      text-align: center;
+      background-color: #fff;
+      border-bottom: 2px solid #f1f1f1;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      margin-top: 20px;
+      flex-grow: 1;
+    }
+
+    .about-container h1 {
+      font-size: 36px;
+      margin-bottom: 30px;
+      color: #333;
+      font-weight: 700;
+    }
+
+    .about-content {
+      max-width: 800px;
+      margin: 0 auto;
+      font-size: 18px;
+      color: #555;
+      line-height: 1.8;
+      text-align: left;
+      background-color: #fff;
+      padding: 30px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+    }
+
+    .about-content p {
+      margin-bottom: 20px;
+    }
+
+    .about-content strong {
+      color: #f60;
+      font-weight: 600;
+    }
+
+    .about-content a {
+      color: #f60;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .about-content a:hover {
+      text-decoration: underline;
+    }
+
+    /* Footer */
+    footer {
+      padding: 30px 20px;
+      background-color: #1a1a1d;
+      color: #fff;
+      text-align: center;
+      font-size: 14px;
+      margin-top: 40px;
+      margin-bottom: 0;
+      position: relative;
+      bottom: 0;
+      width: 100%;
+    }
+
+    /* Responsive Design */
+    @media screen and (max-width: 768px) {
+      .about-container {
+        padding: 40px 20px;
+      }
+
+      .about-content {
+        font-size: 16px;
+        padding: 20px;
+      }
+
+      header nav {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      header nav a {
+        margin: 10px 0;
+      }
+    }
+
+    /* Scroll to top button style */
+    .scroll-top {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #f60;
+      color: #fff;
+      padding: 10px 20px;
+      border-radius: 50%;
+      font-size: 16px;
+      border: none;
+      cursor: pointer;
+      display: none;
+      z-index: 10;
+    }
+
+    .scroll-top:hover {
+      background-color: #e05c00;
+    }
+
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="logo">
+      <img src="l.jpg" alt="AniWears Logo">
+    </div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="product.html">Shop</a>
+      <a href="about.html">About Us</a>
+      <a href="contact.html">Contact</a>
+      <a href="cart.html">
+        <span class="cart-icon">🛒</span>
+        <span class="cart-count" id="cart-count">0</span>
+      </a>
+    </nav>
+  </header>
+
+  <!-- About Section -->
+  <section class="about-container">
+    <h1>About AniWears</h1>
+    <div class="about-content">
+      <p>
+        <strong>AniWears</strong> was founded in January 2024 by Sabeer, with a vision to revolutionize the fashion industry in India. Born out of a love for anime and a passion for creativity, AniWears has quickly become the leading embroidery brand in the country. We pride ourselves on offering the highest quality custom-embroidered apparel featuring your favorite anime characters, anime-themed designs, and original artwork.
+      </p>
+
+      <p>
+        Our journey began with a simple idea – to bring anime and pop culture to life through wearable art. Combining the finest quality fabrics with detailed, custom embroidery techniques, we offer a range of products that appeal to anime lovers, fashion enthusiasts, and collectors alike. From trendy hoodies and t-shirts to unique accessories and home decor, AniWears has something for everyone.
+      </p>
+
+      <p>
+        At AniWears, we believe that fashion should be accessible without compromising on quality. That’s why we ensure that all our products are priced reasonably, making premium embroidered apparel affordable for all anime fans in India. We focus on customer satisfaction, timely delivery, and ensuring that every item we sell meets the highest standards.
+      </p>
+
+      <p>
+        Since our inception, AniWears has grown rapidly, establishing itself as a household name for anime-inspired fashion. Our dedicated team of designers, artists, and embroidery specialists work tirelessly to create and deliver exclusive designs that reflect the spirit of anime culture. Whether it’s a favorite character, a memorable moment, or a unique design concept, we bring it to life with precision and passion.
+      </p>
+
+      <p>
+        Our mission is to be the go-to brand for anyone seeking custom anime-themed fashion. We are committed to pushing the boundaries of creativity and craftsmanship, making sure that each piece of clothing we sell is not just a product but a statement. With AniWears, you’re not just buying clothes; you’re becoming part of a community that celebrates creativity, culture, and the love of anime.
+      </p>
+
+      <p>
+        Looking ahead, AniWears plans to expand its reach, providing even more people with the opportunity to wear high-quality anime-inspired fashion. Our ambition is to become the largest and most trusted anime apparel brand in India, catering to both anime fans and fashion-forward individuals who want to express their unique style.
+      </p>
+
+      <p>
+        Thank you for choosing AniWears – where fashion meets anime, and every stitch tells a story. We are excited for you to join us on this incredible journey and look forward to bringing you more unique designs and experiences.
+      </p>
+
+      <a href="product.html">Explore Our Products Now</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2024 AniWears. All Rights Reserved.</p>
+  </footer>
+
+  <button class="scroll-top" onclick="scrollToTop()">↑</button>
+
+  <script>
+    // JavaScript to handle cart count update
+    let cartCount = localStorage.getItem('cartCount') ? parseInt(localStorage.getItem('cartCount')) : 0;
+    document.getElementById('cart-count').textContent = cartCount;
+
+    // Scroll to top functionality
+    window.onscroll = function () {
+      if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+        document.querySelector(".scroll-top").style.display = "block";
+      } else {
+        document.querySelector(".scroll-top").style.display = "none";
+      }
+    };
+
+    function scrollToTop() {
+      document.body.scrollTop = 0;
+      document.documentElement.scrollTop = 0;
+    }
+  </script>
+</body>
+</html>

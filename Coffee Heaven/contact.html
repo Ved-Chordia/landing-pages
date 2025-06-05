@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Coffee Heaven</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #faf3e0;
+            color: #4b3832;
+        }
+        header {
+            background-color: #6f4e37;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 50px;
+        }
+
+        header h1 {
+            font-size: 36px;
+            font-weight: bold;
+            color: #fff;
+            margin: 0;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            gap: 30px;
+        }
+
+        nav ul li {
+            display: inline;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            font-size: 18px;
+            color: #fff;
+            transition: color 0.3s ease-in-out;
+        }
+
+        nav ul li a:hover {
+            color: #d2b48c;
+        }
+
+        /* Contact Us Section */
+        .contact-header {
+            text-align: center;
+            background-color: #6f4e37; /* New color for the Contact Us header */
+            padding: 40px 0;
+            margin-bottom: 20px;
+        }
+
+        .contact-header h1 {
+            margin: 0;
+            color: #fff;
+            font-size: 36px;
+        }
+
+        /* Line between Header and Contact Us */
+        .line {
+            width: 100%;
+            height: 2px;
+            background-color: #6f4e37;
+            margin: 20px 0;
+        }
+
+        .contact-container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .contact-container h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #4b3832;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            height: 100px;
+        }
+
+        .submit-btn {
+            display: block;
+            width: 100%;
+            background-color: #6f4e37;
+            color: #fff;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        .submit-btn:hover {
+            background-color: #4b3832;
+        }
+
+        .contact-info {
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        .contact-info p {
+            margin: 10px 0;
+        }
+
+        .contact-info span {
+            font-weight: bold;
+        }
+
+        footer {
+            background-color: #d2b48c;
+            text-align: center;
+            padding: 20px 0;
+            color: #4b3832;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <h1>Coffee Heaven</h1>
+        <nav>
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="menu.html">Menu</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="order.html">Order</a></li>
+                <li><a href="log.html">Log In</a></li>
+            </ul>
+        </nav>        
+    </header>
+
+    <!-- Line Between Header and Contact Us -->
+    <div class="line"></div>
+
+    <!-- Contact Us Section -->
+    <div class="contact-header">
+        <h1>Contact Us -<i class="fas fa-coffee"></i> Coffee Heaven</h1>
+    </div>
+
+    <div class="contact-container">
+        <h2>We'd love to hear from you!</h2>
+        <form>
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" placeholder="Enter your name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+            </div>
+            <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" placeholder="Write your message here..." required></textarea>
+            </div>
+            <button type="submit" class="submit-btn">Send Message</button>
+        </form>
+
+        <div class="contact-info">
+            <p><span>Address:</span> 123 Coffee Lane, Brewtown, India</p>
+            <p><span>Email:</span> support@coffeeheaven.com</p>
+            <p><span>Phone:</span> +91 98765 43210</p>
+        </div>
+    </div>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2024 Coffee Heaven | Made with ☕ and ❤️</p>
+    </footer>
+</body>
+</html>

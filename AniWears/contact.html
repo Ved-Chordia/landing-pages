@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us - AniWears</title>
+  <style>
+    /* Global Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Arial', sans-serif;
+    }
+
+    /* Body */
+    body {
+      background-color: #f4f4f4;
+      color: #333;
+      line-height: 1.6;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    /* Header */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 30px;
+      background-color: #1a1a1d;
+      color: #fff;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    header .logo img {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    header nav a {
+      color: #ddd;
+      margin: 0 20px;
+      text-decoration: none;
+      font-size: 16px;
+      transition: color 0.3s;
+    }
+
+    header nav a:hover {
+      color: #f57c00;  /* Updated hover color */
+    }
+
+    /* Contact Section */
+    .contact-container {
+      padding: 60px 20px;
+      text-align: center;
+      background-color: #fff;
+      border-bottom: 2px solid #f1f1f1;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      margin-top: 20px;
+      flex-grow: 1;
+      border-radius: 8px;
+    }
+
+    .contact-container h1 {
+      font-size: 36px;
+      margin-bottom: 30px;
+      color: #333;
+      font-weight: 700;
+    }
+
+    .contact-content {
+      max-width: 800px;
+      margin: 0 auto;
+      font-size: 18px;
+      color: #555;
+      line-height: 1.8;
+      text-align: left;
+      background-color: #fff;
+      padding: 30px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+    }
+
+    .contact-content p {
+      margin-bottom: 20px;
+    }
+
+    .contact-content a {
+      color: #f57c00; /* Updated link color */
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    .contact-content a:hover {
+      color: #d4571b;
+      text-decoration: underline;
+    }
+
+    .contact-info {
+      margin-top: 30px;
+      font-size: 18px;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    .contact-info span {
+      font-weight: bold;
+      color: #f57c00; /* Updated span color */
+    }
+
+    /* Card-like container for contact info */
+    .contact-info p {
+      background-color: #f9f9f9;
+      margin: 15px 0;
+      padding: 15px;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      font-size: 16px;
+      transition: background-color 0.3s ease;
+    }
+
+    .contact-info p:hover {
+      background-color: #f1f1f1;
+    }
+
+    .contact-info a {
+      font-size: 16px;
+      color: #f57c00; /* Updated link color */
+      transition: color 0.3s ease;
+    }
+
+    .contact-info a:hover {
+      color: #d4571b;
+    }
+
+    /* Contact Buttons */
+    .contact-buttons {
+      margin-top: 20px;
+    }
+
+    .contact-buttons a {
+      display: inline-block;
+      background-color: #f57c00;
+      color: white;
+      padding: 10px 20px;
+      text-decoration: none;
+      font-size: 16px;
+      font-weight: bold;
+      border-radius: 5px;
+      margin: 10px;
+      transition: background-color 0.3s, transform 0.3s;
+    }
+
+    .contact-buttons a:hover {
+      background-color: #d4571b;
+      transform: scale(1.05);
+    }
+
+    /* Instagram Button */
+    .instagram-button {
+      background-color: #e1306c; /* Instagram color */
+      color: white;
+    }
+
+    .instagram-button:hover {
+      background-color: #c13584; /* Darker Instagram color on hover */
+    }
+
+    /* Footer */
+    footer {
+      padding: 30px 20px;
+      background-color: #1a1a1d;
+      color: #fff;
+      text-align: center;
+      font-size: 14px;
+      margin-top: 40px;
+      margin-bottom: 0;
+      position: relative;
+      bottom: 0;
+      width: 100%;
+      border-top: 2px solid #f1f1f1;
+    }
+
+    footer a {
+      color: #f57c00; /* Updated footer link color */
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    footer a:hover {
+      color: #d4571b;
+      text-decoration: underline;
+    }
+
+    /* Responsive Design */
+    @media screen and (max-width: 768px) {
+      .contact-container {
+        padding: 40px 20px;
+      }
+
+      .contact-content {
+        font-size: 16px;
+        padding: 20px;
+      }
+
+      header nav {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      header nav a {
+        margin: 10px 0;
+      }
+
+      footer {
+        font-size: 12px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="logo">
+      <img src="l.jpg" alt="AniWears Logo">
+    </div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="product.html">Shop</a>
+      <a href="about.html">About Us</a>
+      <a href="contact.html">Contact</a>
+      <a href="cart.html">
+        <span class="cart-icon">🛒</span>
+        <span class="cart-count" id="cart-count">0</span>
+      </a>
+    </nav>
+  </header>
+
+  <!-- Contact Section -->
+  <section class="contact-container">
+    <h1>Contact Us</h1>
+    <div class="contact-content">
+      <p>If you have any questions, feel free to get in touch with us! Our team is always ready to assist you with anything you need. You can reach out through email, call, or social media!</p>
+
+      <div class="contact-info">
+        <p><span>Name:</span> Sabeer Ahmed</p>
+        <p><span>Email:</span> <a href="mailto:sabeer457w@gmail.com">sabeer457w@gmail.com</a></p>
+        <p><span>Phone:</span> <a href="tel:+917022426682">7022426682</a></p>
+
+        <p><span>Name:</span> Nishanth</p>
+        <p><span>Email:</span> <a href="mailto:nishanthp1254@gmail.com">nishanthp1254@gmail.com</a></p>
+        <p><span>Phone:</span> <a href="tel:+918867579661">88675 79661</a></p>
+
+        <p><span>Instagram:</span> <a href="https://www.instagram.com/inplates_presidency/" target="_blank">@inplates_presidency</a></p>
+      </div>
+
+      <!-- Buttons -->
+      <div class="contact-buttons">
+        <a href="mailto:sabeer457w@gmail.com">Email Us</a>
+        <a href="tel:+917022426682">Call Us</a>
+        <!-- Instagram Button -->
+        <a href="https://www.instagram.com/inplates_presidency/" target="_blank" class="instagram-button">Follow Us on Instagram</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2024 AniWears. All Rights Reserved.</p>
+    <p><a href="contact.html">Contact Us</a></p>
+  </footer>
+
+  <script>
+    // JavaScript to handle cart count update
+    let cartCount = localStorage.getItem('cartCount') ? parseInt(localStorage.getItem('cartCount')) : 0;
+    document.getElementById('cart-count').textContent = cartCount;
+  </script>
+</body>
+</html>

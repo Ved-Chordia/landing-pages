@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cart - AniWears</title>
+  <style>
+    /* Global Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Arial', sans-serif;
+    }
+
+    /* Body */
+    body {
+      background-color: #f4f4f4;
+      color: #333;
+      line-height: 1.6;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    /* Header */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 30px;
+      background-color: #1a1a1d;
+      color: #fff;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    header .logo img {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    header nav a {
+      color: #ddd;
+      margin: 0 20px;
+      text-decoration: none;
+      font-size: 16px;
+      transition: color 0.3s;
+    }
+
+    header nav a:hover {
+      color: #f57c00;
+    }
+
+    /* Cart Count */
+    .cart-count-badge {
+      font-size: 16px;
+      font-weight: bold;
+      color: white;
+      position: absolute;
+      top: 0;
+      right: 0;
+      transform: translate(50%, -50%);
+      background: none;
+      padding: 0;
+    }
+
+    .cart-icon {
+      position: relative;
+    }
+
+    /* Cart Page */
+    .cart-container {
+      padding: 40px;
+      background-color: #fff;
+      margin-top: 20px;
+      flex-grow: 1;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .cart-container h1 {
+      font-size: 36px;
+      margin-bottom: 20px;
+      text-align: center;
+      color: #333;
+    }
+
+    .cart-items {
+      margin-bottom: 30px;
+    }
+
+    .cart-items table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .cart-items table th, .cart-items table td {
+      padding: 10px;
+      border: 1px solid #ddd;
+      text-align: center;
+    }
+
+    .cart-items table th {
+      background-color: #f57c00;
+      color: white;
+    }
+
+    .total {
+      font-size: 24px;
+      font-weight: bold;
+      text-align: right;
+      margin-top: 20px;
+    }
+
+    /* Footer */
+    footer {
+      padding: 30px 20px;
+      background-color: #1a1a1d;
+      color: #fff;
+      text-align: center;
+      font-size: 14px;
+      margin-top: 40px;
+      position: relative;
+      bottom: 0;
+      width: 100%;
+      border-top: 2px solid #f1f1f1;
+    }
+
+    footer a {
+      color: #f57c00;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    footer a:hover {
+      color: #d4571b;
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="logo">
+      <img src="l.jpg" alt="AniWears Logo">
+    </div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="product.html">Shop</a>
+      <a href="about.html">About Us</a>
+      <a href="contact.html">Contact</a>
+      <a href="cart.html">
+        <span class="cart-icon">🛒</span>
+        <span class="cart-count" id="cart-count">0</span>
+      </a>
+    </nav>
+  </header>
+
+  <!-- Cart Section -->
+  <section class="cart-container">
+    <h1>Your Cart</h1>
+
+    <div class="cart-items">
+      <table id="cart-table">
+        <thead>
+          <tr>
+            <th>Product</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th>Total</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Cart Items will be populated here -->
+        </tbody>
+      </table>
+    </div>
+
+    <div class="total">
+      <p>Total Price: ₹<span id="total-price">0</span></p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2024 AniWears. All Rights Reserved.</p>
+    <p><a href="contact.html">Contact Us</a></p>
+  </footer>
+
+  <script>
+    // Initialize cart data from localStorage
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+    // Update cart count in the header
+    document.getElementById('cart-count').textContent = cart.length;
+
+    // Render cart items in the table
+    const cartTableBody = document.querySelector('#cart-table tbody');
+    let totalPrice = 0;
+
+    cart.forEach(item => {
+      const row = document.createElement('tr');
+      row.innerHTML = `
+        <td>${item.name}</td>
+        <td>₹${item.price}</td>
+        <td>${item.quantity}</td>
+        <td>₹${item.price * item.quantity}</td>
+      `;
+      cartTableBody.appendChild(row);
+      totalPrice += item.price * item.quantity;
+    });
+
+    // Update total price
+    document.getElementById('total-price').textContent = totalPrice;
+  </script>
+
+</body>
+</html>

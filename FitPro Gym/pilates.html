@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FitPro Gym - Pilates Classes</title>
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #121212;
+            color: #fff;
+            line-height: 1.6;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 40px;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(0, 0, 0, 0.9);
+        }
+
+        header h1 {
+            font-size: 2rem;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: bold;
+            font-size: 1rem;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: #f44336;
+        }
+
+        /* Pilates Section */
+        .pilates-section {
+            padding: 60px 20px;
+            margin-top: 100px; /* For fixed header */
+            flex-grow: 1;
+            text-align: center;
+        }
+
+        .pilates-section h2 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: #f44336;
+        }
+
+        .pilates-section p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            color: #ccc;
+            line-height: 1.8;
+        }
+
+        .pilates-classes {
+            display: flex;
+            justify-content: space-between;
+            gap: 40px;
+            flex-wrap: wrap;
+            margin-top: 40px;
+        }
+
+        /* Class Card Styling */
+        .class-card {
+            background: #1f1f1f;
+            padding: 20px;
+            border-radius: 15px;
+            width: 45%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s ease;
+            text-align: left;
+        }
+
+        .class-card:hover {
+            transform: scale(1.05);
+        }
+
+        .class-card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+            color: #f44336;
+        }
+
+        .class-card p {
+            font-size: 1rem;
+            margin-bottom: 15px;
+            color: #ccc;
+        }
+
+        .class-card button {
+            padding: 10px 20px;
+            background-color: #f44336;
+            color: #fff;
+            border: none;
+            border-radius: 10px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .class-card button:hover {
+            background-color: #d32f2f;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.8);
+            color: #fff;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <h1>FitPro Gym</h1>
+        <nav>
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="classes.html">Classes</a></li>
+                <li><a href="trainers.html">Trainers</a></li>
+                <li><a href="member.html">Membership Plans</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Pilates Section -->
+    <section class="pilates-section">
+        <h2>Pilates Classes</h2>
+        <p>Strengthen your core, enhance your flexibility, and improve your posture with our Pilates classes. Designed for all fitness levels, our sessions provide a holistic approach to physical and mental well-being.</p>
+
+        <!-- Pilates Classes -->
+        <div class="pilates-classes">
+            <!-- Class 1 -->
+            <div class="class-card">
+                <h3>Beginner Pilates</h3>
+                <p>Learn the fundamentals of Pilates, focusing on basic movements and techniques to build core strength and flexibility.</p>
+                <button onclick="location.href='signup.html'">Sign Up Now</button>
+            </div>
+
+            <!-- Class 2 -->
+            <div class="class-card">
+                <h3>Advanced Pilates</h3>
+                <p>Challenge yourself with advanced exercises and techniques to enhance your core stability and overall strength.</p>
+                <button onclick="location.href='signup.html'">Sign Up Now</button>
+            </div>
+
+            <!-- Class 3 -->
+            <div class="class-card">
+                <h3>Reformer Pilates</h3>
+                <p>Experience Pilates on the reformer machine to increase muscle tone and improve alignment and balance.</p>
+                <button onclick="location.href='signup.html'">Sign Up Now</button>
+            </div>
+
+            <!-- Class 4 -->
+            <div class="class-card">
+                <h3>Mat Pilates</h3>
+                <p>Practice Pilates on the mat with a focus on bodyweight exercises for improved strength and flexibility.</p>
+                <button onclick="location.href='signup.html'">Sign Up Now</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 FitPro Gym. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>

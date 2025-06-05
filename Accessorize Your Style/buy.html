@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Checkout at Accessorize Your Style">
+  <meta name="keywords" content="checkout, purchase, accessories, shopping">
+  <title>Accessory Shop - Checkout</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    body {
+      font-family: 'Georgia', serif;
+      background-color: #f7f2f1;
+      color: #4a4a4a;
+      margin: 0;
+    }
+
+    header {
+      text-align: center;
+      background-color: #e8d1d1;
+      padding: 20px;
+    }
+
+    header h1 {
+      font-size: 2.8rem;
+      color: #7a6565;
+    }
+
+    header p {
+      color: #a7a1a1;
+      font-size: 1.2rem;
+    }
+
+    .checkout-container {
+      max-width: 800px;
+      margin: 50px auto;
+      background-color: #f4eaea;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .checkout-container h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      font-size: 1.8rem;
+    }
+
+    .checkout-item {
+      margin-bottom: 20px;
+      padding: 10px;
+      background-color: #fff;
+      border-radius: 8px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border: 1px solid #ddd;
+    }
+
+    .checkout-item img {
+      max-width: 60px;
+      max-height: 60px;
+      margin-right: 15px;
+    }
+
+    .checkout-item .details {
+      flex-grow: 1;
+    }
+
+    .checkout-item .remove {
+      cursor: pointer;
+      color: #a7a1a1;
+      font-size: 1.2rem;
+    }
+
+    #total {
+      font-size: 1.8rem;
+      text-align: right;
+      margin-top: 20px;
+    }
+
+    button {
+      width: 100%;
+      background-color: #e3bcbc;
+      color: white;
+      border: none;
+      padding: 12px 0;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 1.2rem;
+      margin-top: 20px;
+    }
+
+    button:hover {
+      background-color: #d6b1b1;
+    }
+
+    .back-button {
+      width: 100%;
+      background-color: #7a6565;
+      color: white;
+      border: none;
+      padding: 10px 0;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 1.2rem;
+      margin-top: 10px;
+    }
+
+    .back-button:hover {
+      background-color: #5f4a4a;
+    }
+
+    .error {
+      color: red;
+      font-size: 1rem;
+      margin-top: 10px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1><i class="fas fa-gem"></i> Accessorize Your Style</h1>
+    <p>Checkout</p>
+  </header>
+
+  <section class="checkout-container">
+    <h2>Your Order</h2>
+    <div id="checkout-items"></div>
+    <div id="total">Total: $0.00</div>
+    <button onclick="proceedToPurchase()">Complete Purchase</button>
+    <button class="back-button" onclick="window.location.href='cart.html'">Back to Cart</button>
+  </section>
+
+  <script>
+    // Function to load cart items into the checkout page
+    function loadCheckout() {
+      // Get the cart from localStorage
+      let cart = JSON.parse(localStorage.getItem('cart')) || [];
+      
+      // Get the checkout items container
+      const checkoutItemsContainer = document.getElementById('checkout-items');
+      
+      // Clear any existing checkout items
+      checkoutItemsContainer.innerHTML = '';
+      
+      // If the cart is empty, display a message
+      if (cart.length === 0) {
+        checkoutItemsContainer.innerHTML = '<p id="empty-cart">Your cart is empty.</p>';
+        document.getElementById('total').innerHTML = 'Total: $0.00';
+        return;
+      }
+
+      // Display each cart item
+      let total = 0;
+      cart.forEach(item => {
+        const checkoutItemDiv = document.createElement('div');
+        checkoutItemDiv.classList.add('checkout-item');
+        
+        // Create the item content (image, name, price)
+        checkoutItemDiv.innerHTML = `
+          <img src="${item.image}" alt="${item.name}">
+          <div class="details">
+            <p class="name">${item.name}</p>
+            <p class="price">$${item.price}</p>
+          </div>
+          <div class="remove" onclick="removeFromCart('${item.name}')">Remove</div>
+        `;
+        
+        // Append the cart item to the container
+        checkoutItemsContainer.appendChild(checkoutItemDiv);
+
+        // Add to the total
+        total += parseFloat(item.price);
+      });
+
+      // Update total price
+      document.getElementById('total').innerHTML = `Total: $${total.toFixed(2)}`;
+    }
+
+    // Function to remove an item from the cart
+    function removeFromCart(productName) {
+      // Get the cart from localStorage
+      let cart = JSON.parse(localStorage.getItem('cart')) || [];
+      
+      // Filter out the item to be removed
+      cart = cart.filter(item => item.name !== productName);
+      
+      // Save the updated cart back to localStorage
+      localStorage.setItem('cart', JSON.stringify(cart));
+      
+      // Reload the checkout page
+      loadCheckout();
+    }
+
+    // Function to proceed with the purchase
+    function proceedToPurchase() {
+      let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+      // If the cart is empty, show an alert
+      if (cart.length === 0) {
+        alert("Your cart is empty.");
+        return;
+      }
+
+      // If cart is not empty, proceed with the purchase (for now, just an alert)
+      alert("Thank you for your purchase!");
+      
+      // Clear the cart after purchase (optional)
+      localStorage.removeItem('cart');
+
+      // Redirect to a confirmation or home page
+      window.location.href = "confirmation.html"; // Replace with actual page
+    }
+
+    // Load checkout page when it is opened
+    loadCheckout();
+  </script>
+
+</body>
+</html>

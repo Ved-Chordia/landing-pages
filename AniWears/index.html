@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AniWears - Home</title>
+  <style>
+    /* Global Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Arial', sans-serif;
+    }
+
+    /* Body and Background */
+    body {
+      background-color: #f9f9f9;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    /* Header */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 30px;
+      background-color: #1a1a1d;
+      color: #fff;
+    }
+
+    header .logo img {
+      width: 80px; /* Adjust the size */
+      height: 80px; /* Make the height the same as the width for a perfect circle */
+      border-radius: 50%; /* This makes the logo round */
+      object-fit: cover; /* Ensures the image fits inside the circle without stretching */
+  
+    }
+
+    header nav a {
+      color: #ddd;
+      margin: 0 20px;
+      text-decoration: none;
+      font-size: 16px;
+      transition: color 0.3s;
+    }
+
+    header nav a:hover {
+      color: #f90;
+    }
+
+    /* Slideshow Container */
+    .slideshow-container {
+      position: relative;
+      max-width: 100%;
+      margin: 0 auto;
+      height: 500px;
+      overflow: hidden;
+    }
+
+    .slide {
+      display: none;
+      width: 100%;
+      height: 500px;
+      object-fit: cover;
+    }
+
+    .slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .active {
+      display: block;
+    }
+
+    /* Navigation Arrows */
+    .prev, .next {
+      position: absolute;
+      top: 50%;
+      color: #fff;
+      font-size: 24px;
+      font-weight: bold;
+      background-color: rgba(0, 0, 0, 0.5);
+      padding: 10px 15px;
+      cursor: pointer;
+      border-radius: 50%;
+      transform: translateY(-50%);
+    }
+
+    .prev {
+      left: 20px;
+    }
+
+    .next {
+      right: 20px;
+    }
+
+    .prev:hover, .next:hover {
+      background-color: rgba(0, 0, 0, 0.8);
+    }
+
+    /* Hero Section */
+    .hero {
+      text-align: center;
+      height: 500px;
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      background-color: #333;
+    }
+
+    .hero h1 {
+      font-size: 48px;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      font-size: 20px;
+      margin-bottom: 30px;
+      max-width: 600px;
+    }
+
+    .hero .cta-button {
+      background-color: #f90;
+      padding: 15px 40px;
+      font-size: 18px;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 8px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s, background-color 0.3s;
+    }
+
+    .hero .cta-button:hover {
+      transform: translateY(-5px);
+      background-color: #ffb84d;
+    }
+
+    /* Featured Products */
+    .featured-products {
+      text-align: center;
+      padding: 60px 20px;
+    }
+
+    .featured-products h2 {
+      font-size: 36px;
+      margin-bottom: 30px;
+      color: #333;
+    }
+
+    .product-grid {
+      display: flex;
+      justify-content: space-evenly;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .product-card {
+      width: 250px;
+      background-color: #fff;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .product-card img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      transition: transform 0.3s;
+    }
+
+    .product-card:hover img {
+      transform: scale(1.05);
+    }
+
+    .product-card .info {
+      padding: 20px;
+      text-align: center;
+    }
+
+    .product-card .info h3 {
+      font-size: 20px;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+
+    .product-card .info p {
+      font-size: 18px;
+      color: #f60;
+    }
+
+    .product-card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Browse Button Styling */
+    .browse-btn {
+      text-align: center;
+      margin: 40px 0;
+    }
+
+    .browse-btn .cta-button {
+      background-color: #f90;
+      padding: 15px 40px;
+      font-size: 18px;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 8px;
+      transition: transform 0.3s, background-color 0.3s;
+      font-weight: bold;
+    }
+
+    .browse-btn .cta-button:hover {
+      transform: translateY(-5px);
+      background-color: #ffb84d;
+    }
+
+    /* Footer */
+    footer {
+      padding: 30px 20px;
+      background-color: #1a1a1d;
+      color: #fff;
+      text-align: center;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="logo">
+      <img src="l.jpg" alt="AniWears Logo">
+    </div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="product.html">Shop</a>
+      <a href="about.html">About Us</a>
+      <a href="contact.html">Contact</a>
+      <a href="cart.html">
+        <span class="cart-icon">🛒</span>
+        <span class="cart-count" id="cart-count">0</span></a>
+    </nav>
+  </header>
+
+  <!-- Slideshow Section -->
+  <div class="slideshow-container">
+    <div class="slide active">
+      <img src="s1.jpeg" alt="Slide 1">
+    </div>
+    <div class="slide">
+      <img src="s2.jpeg" alt="Slide 2">
+    </div>
+    <div class="slide">
+      <img src="s3.jpeg" alt="Slide 3">
+    </div>
+    <button class="prev" onclick="plusSlides(-1)">&#10094;</button>
+    <button class="next" onclick="plusSlides(1)">&#10095;</button>
+  </div>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <h1>Welcome to AniWears</h1>
+    <p>Your favorite anime characters brought to life through premium embroidered apparel.</p>
+    <a href="product.html" class="cta-button">Shop Now</a>
+  </section>
+
+  <!-- Featured Products -->
+  <section class="featured-products">
+    <h2>Featured Products</h2>
+    <div class="product-grid">
+      <div class="product-card">
+        <img src="p1.jpg" alt="Anime Hoodie">
+        <div class="info">
+          <h3>Anime Hoodie</h3>
+          <p>₹3,999</p>
+        </div>
+      </div>
+      <div class="product-card">
+        <img src="p2.jpg" alt="Anime T-Shirt">
+        <div class="info">
+          <h3>Anime T-Shirt</h3>
+          <p>₹1,999</p>
+        </div>
+      </div>
+      <!-- Additional products... -->
+    </div>
+  </section>
+
+  <!-- Browse All Products Button -->
+  <div class="browse-btn">
+    <a href="product.html" class="cta-button">Browse All Products</a>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2024 AniWears. All Rights Reserved.</p>
+  </footer>
+
+  <script>
+    let slideIndex = 0;
+    function showSlides() {
+      const slides = document.querySelectorAll(".slide");
+      slides.forEach((slide, index) => {
+        slide.style.display = (index === slideIndex) ? "block" : "none";
+      });
+    }
+
+    function plusSlides(n) {
+      const slides = document.querySelectorAll(".slide");
+      slideIndex = (slideIndex + n + slides.length) % slides.length;
+      showSlides();
+    }
+
+    setInterval(() => plusSlides(1), 3000);
+    showSlides();
+  </script>
+</body>
+</html>

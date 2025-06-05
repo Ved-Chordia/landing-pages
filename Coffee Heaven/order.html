@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order - Coffee Heaven</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #faf3e0;
+            color: #4b3832;
+        }
+
+        header {
+            background-color: #6f4e37;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 50px;
+        }
+
+        header h1 {
+            font-size: 36px;
+            font-weight: bold;
+            color: #fff;
+            margin: 0;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            gap: 30px;
+        }
+
+        nav ul li {
+            display: inline;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            font-size: 18px;
+            color: #fff;
+            transition: color 0.3s ease-in-out;
+        }
+
+        nav ul li a:hover {
+            color: #d2b48c;
+        }
+
+        .order-container {
+            max-width: 1200px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        .section h2 {
+            text-align: center;
+            color: #6f4e37;
+            margin-bottom: 20px;
+        }
+
+        .products {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            justify-content: center;
+        }
+
+        .product-card {
+            background-color: #fff;
+            padding: 15px;
+            border-radius: 8px;
+            width: 200px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
+            border: 1px solid #f0f0f0;
+        }
+
+        .product-card img {
+        max-width: 100%;
+        border-radius: 5px;
+        /* Add these new styles for uniform image size */
+        width: 150px;
+        height: 150px;
+        object-fit: cover; /* Ensures the image covers the dimensions without distortion */
+    }
+
+        .product-card h3 {
+            font-size: 20px;
+            color: #6f4e37;
+            margin-top: 10px;
+        }
+
+        .product-card p {
+            font-size: 14px;
+            color: #4b3832;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+
+        .product-card .price {
+            font-weight: bold;
+            font-size: 18px;
+            color: #d2b48c;
+            margin-bottom: 10px;
+        }
+
+        .product-card:hover {
+            transform: scale(1.05);
+            background-color: #f7e2c0;
+            border-color: #6f4e37;
+        }
+
+        footer {
+            background-color: #d2b48c;
+            text-align: center;
+            padding: 20px 0;
+            color: #4b3832;
+        }
+        .tracking-info {
+            background-color: #f7e2c0;
+            padding: 20px;
+            margin-bottom: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .tracking-info p {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .tracking-info span {
+            color: #6f4e37;
+            font-weight: bold;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <h1><i class="fas fa-coffee"></i>Coffee Heaven</h1>
+        <nav>
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="menu.html">Menu</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="order.html">Order</a></li>
+                <li><a href="log.html">Log In</a></li>
+            </ul>
+        </nav>        
+    </header>
+
+    <!-- Order Tracking Section -->
+    <div class="order-container">
+        <div class="section tracking-info">
+            <h2>Track Your Order</h2>
+            <p><strong>Order ID:</strong> <span id="order-id"></span></p>
+            <p><strong>Order Status:</strong> <span id="order-status">Processing</span></p>
+        </div>
+
+        <!-- Merchandise Section -->
+        <div class="section">
+            <h2>Merchandise</h2>
+            <div class="products">
+                <div class="product-card" onclick="addToBill('Coffee Mug', 'Enjoy your coffee in style with our classic coffee mug. Durable and perfect for daily use.', 350, 'merch/p1.jpg')">
+                    <img src="merch/p1.jpg" alt="Coffee Cup">
+                    <h3>Coffee Mug</h3>
+                    <p>Enjoy your coffee in style with our classic coffee mug. Durable and perfect for daily use.</p>
+                    <p class="price">₹350</p>
+                </div>
+                <div class="product-card" onclick="addToBill('Coffee Tumbler', 'A stylish and portable tumbler for coffee lovers. Keeps your coffee warm on the go.', 550, 'merch/p2.jpg')">
+                    <img src="merch/p2.jpg" alt="Coffee Tumbler">
+                    <h3>Coffee Tumbler</h3>
+                    <p>A stylish and portable tumbler for coffee lovers. Keeps your coffee warm on the go.</p>
+                    <p class="price">₹550</p>
+                </div>
+                <div class="product-card" onclick="addToBill('Coffee Thermos', 'Perfect for keeping your coffee hot for hours, ideal for the busy professional.', 800, 'merch/p3.jpg')">
+                    <img src="merch/p3.jpg" alt="Coffee Thermos">
+                    <h3>Coffee Thermos</h3>
+                    <p>Perfect for keeping your coffee hot for hours, ideal for the busy professional.</p>
+                    <p class="price">₹800</p>
+                </div>
+                <div class="product-card" onclick="addToBill('Coffee Bean Storage Canister', 'Keep your coffee beans fresh and aromatic with our airtight storage canister.', 1200, 'merch/p4.jpg')">
+                    <img src="merch/p4.jpg" alt="Coffee Bean Storage Canister">
+                    <h3>Coffee Bean Storage Canister</h3>
+                    <p>Keep your coffee beans fresh and aromatic with our airtight storage canister.</p>
+                    <p class="price">₹1200</p>
+                </div>
+                <div class="product-card" onclick="addToBill('Coffee Grinder', 'Grind your beans to perfection with our manual coffee grinder.', 900, 'merch/p5.jpg')">
+                    <img src="merch/p5.jpg" alt="Coffee Grinder">
+                    <h3>Coffee Grinder</h3>
+                    <p>Grind your beans to perfection with our manual coffee grinder.</p>
+                    <p class="price">₹900</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Coffee Beans Section -->
+        <div class="section">
+            <h2>Coffee Beans</h2>
+            <div class="products">
+                <div class="product-card" onclick="addToBill('Arabica Coffee Beans', '', 'Smooth and aromatic Arabica beans from the best farms, perfect for brewing a premium cup.', 1200, 'merch/p6.jpg')">
+                    <img src="merch/p6.jpg" alt="Arabica Coffee Beans">
+                    <h3>Arabica Coffee Beans</h3>
+                    <p>Smooth and aromatic Arabica beans from the best farms, perfect for brewing a premium cup.</p>
+                    <p class="price">₹1200 (500g)</p>
+                </div>
+                <div class="product-card" onclick="addToBill('Robusta Coffee Beans', 'Strong and bold, these Robusta beans offer a powerful coffee experience.', 900, 'merch/p7.jpg')">
+                    <img src="merch/p7.jpg" alt="Robusta Coffee Beans">
+                    <h3>Robusta Coffee Beans</h3>
+                    <p>Strong and bold, these Robusta beans offer a powerful coffee experience.</p>
+                    <p class="price">₹900 (500g)</p>
+                </div>
+                <div class="product-card" onclick="addToBill('Espresso Coffee Beans', 'Perfect for espresso lovers, these beans offer a rich and bold flavor.', 1500, 'merch/p8.jpg')">
+                    <img src="merch/p8.jpg" alt="Espresso Coffee Beans">
+                    <h3>Espresso Coffee Beans</h3>
+                    <p>Perfect for espresso lovers, these beans offer a rich and bold flavor.</p>
+                    <p class="price">₹1500 (500g)</p>
+                </div>
+                <div class="product-card" onclick="addToBill('Decaf Coffee Beans', 'Enjoy the flavor of coffee without the caffeine, perfect for late-night sipping.', 1000, 'merch/p9.jpg')">
+                    <img src="merch/p9.jpg" alt="Decaf Coffee Beans">
+                    <h3>Decaf Coffee Beans</h3>
+                    <p>Enjoy the flavor of coffee without the caffeine, perfect for late-night sipping.</p>
+                    <p class="price">₹1000 (500g)</p>
+                </div>
+                <div class="product-card" onclick="addToBill('Single-Origin Coffee Beans', 'Sourced from a single origin farm for a distinctive and premium taste.', 1800, 'merch/p10.jpg')">
+                    <img src="merch/p10.jpg" alt="Single-Origin Coffee Beans">
+                    <h3>Single-Origin Coffee Beans</h3>
+                    <p>Sourced from a single origin farm for a distinctive and premium taste.</p>
+                    <p class="price">₹1800 (500g)</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2024 Coffee Heaven | Made with ☕ and ❤️</p>
+    </footer>
+
+    <script>
+        // Function to redirect and store product details in localStorage
+        function addToBill(name, description, price, image) {
+            const productDetails = {
+                name: name,
+                description: description,
+                price: price,
+                image: image
+            };
+    
+            // Save the product details in localStorage
+            localStorage.setItem('selectedProduct', JSON.stringify(productDetails));
+    
+            // Redirect to the bill page
+            window.location.href = 'bill.html';
+        }
+    </script>
+</body>
+</html>
